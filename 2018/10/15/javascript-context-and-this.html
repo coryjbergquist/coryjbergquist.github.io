@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Javascript Context And This | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Javascript Context And This" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We Use &quot;this&quot; in JavaScript to reference the subject of the code that we&#39;re executing." />
+<meta property="og:description" content="We Use &quot;this&quot; in JavaScript to reference the subject of the code that we&#39;re executing." />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-15T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"We Use &quot;this&quot; in JavaScript to reference the subject of the code that we&#39;re executing.","@type":"BlogPosting","url":"/2018/10/15/javascript-context-and-this.html","headline":"Javascript Context And This","dateModified":"2018-10-15T00:00:00-07:00","datePublished":"2018-10-15T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/10/15/javascript-context-and-this.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/staff.html" >Staff</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Javascript Context And This</h1>
+
+<p>
+  15 Oct 2018
+  
+  
+</p>
+
+<h3> We Use "this" in JavaScript to reference the subject of the code that we're executing. </h3>
+
+<p>Context in JavaScript refers to the object that a function belongs to. A big part of those functions can often be the use of “this”.</p>
+
+<p>In the sentence: “John likes coding, he is learning to code right now.” We can think of the “he” as the “this” in our JavaScript code.</p>
+
+<p>Using “this” can help make our code less prone to errors and more abstract, for example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var donut = {
+  name: "ChocoGoodness",
+  flavor: "Chocolate",
+  describeDonut: function () {
+    console.log(this.name + " is " + this.flavor + " flavored.")
+	}
+}
+
+donut.describeDonut()
+</code></pre></div></div>
+
+<p>In the above code, saying “this.name” is the same as saying “donut.name”, but this way we are being more abstract and can potentially use our function later without too much effort.</p>
+
+<h3> Using "this" in your functions </h3>
+
+<h4> "this" will have the value of the object that invokes the function that "this" is in. </h4>
+
+<p>You can use “this” in simple functions like the code above: <code class="highlighter-rouge">console.log(this.name)</code>, and also when borrowing functions from one object to another. When you do this, you need to make sure that the object you are referencing is the current one. For example:</p>
+
+<p>Let’s say we have two objects, one called “iceCream” and one called “baseballPlayer”. We are going to define a function in “iceCream” that we also want to use in our “baseball” object.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var iceCream = {
+  name: "Caramel Monster Crunch",
+	showName: function () {
+	  console.log(this.name);
+	}
+}
+</code></pre></div></div>
+
+<h4> Bind assigns "this" to the object you want, but does not automatically call the function. </h4>
+
+<p><code class="highlighter-rouge">var   iceCreamNameFunction = iceCream.showName.bind(iceCream);</code></p>
+
+<p>When we call <code class="highlighter-rouge">iceCream.nameFunction()</code> we’ll get “Caramel Monster Crunch” in our console. Since “iceCreamNameFunction” is in global scope, if we did not use the “.bind(iceCream)”, the “this” that is inside of our “showName” function would be in global scope (which is the “window” object) because “this” always gets the value of the object that it gets invoked inside of.</p>
+
+<p>Now we want to use that same “nameFunction()” in our baseballPlayer object.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var baseballPlayer = {
+  name: "Johnny Baseball"
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">var baseballPlayerNameFunction = iceCream.showName.bind(baseballPlayer);</code></p>
+
+<p>We can use the function that we made inside of our iceCream object, but we have to bind it to the “baseballPlayer” object so that “this” will have access to the correct object.</p>
+
+<h3> We can also use either call() or apply() instead of bind(). </h3>
+
+<h4> call() is similar to bind, but it is used to call that function right away without needing to assign it to anything. </h4>
+
+<p>Let’s say we had a global variable called “name” and also an object called “baseballPlayer” that has a property of “name”.</p>
+
+<p><code class="highlighter-rouge">var name = "this is in global scope"</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var baseballPlayer = {
+  name: "Johnny Baseball"
+}
+</code></pre></div></div>
+
+<p>Now we want to make a function that gives us the name of our baseballPlayer. This is also in global scope.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var showName = function() {
+  console.log(this.name)
+}
+</code></pre></div></div>
+
+<p>But how does “showName” now what “this” is? Easy, we just use the “call()” function when were using our “showName” function.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>showName.call(baseballPlayer)
+</code></pre></div></div>
+
+<p>Here we have explicitly told “showName” that we want it to be called with the object as “baseballPlayer”. If we didn’t do this, we would get our global variable which puts “this is in global scope” to our console.</p>
+
+<p>Using “apply()” is very similar to “call()”, the difference being, when you use “apply()” you pass in arguments as an array instead of one at a time.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

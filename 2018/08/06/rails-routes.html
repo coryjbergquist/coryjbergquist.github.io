@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Rails Routes | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Rails Routes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="They&#39;re like Sinatra routes, but just different enough to be confusing." />
+<meta property="og:description" content="They&#39;re like Sinatra routes, but just different enough to be confusing." />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-06T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"They&#39;re like Sinatra routes, but just different enough to be confusing.","@type":"BlogPosting","url":"/2018/08/06/rails-routes.html","headline":"Rails Routes","dateModified":"2018-08-06T00:00:00-07:00","datePublished":"2018-08-06T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/08/06/rails-routes.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/staff.html" >Staff</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Rails Routes</h1>
+
+<p>
+  06 Aug 2018
+  
+  
+</p>
+
+<h3> They're like Sinatra routes, but just different enough to be confusing. </h3>
+
+<p>Sinatra was pretty eye-opening for me.  I understood the main concepts of Ruby, ActiveRecord, SQL, and ERB all working together with Sinatra, and I was having a blast creating simple applications that had some real functionality. Moving on to Rails, I was excited to see that there were a lot of similarities in terms of file structure layout. Models, view pages and controllers (MVC) all seemed familiar, and I was ready to jump right in!</p>
+
+<p>I sort of had to come full stop when I ran into how Rails handles routes. I had come to a solid understanding on how controllers and routes worked with Sinatra, but I was having a hard time wrapping my head around the separation of the two in Rails. The controllers are still very important in terms of passing information from the database to the view pages, but the actual routes themselves are in their own separate file that works quite a bit differently from Sinatra. It almost seemed a little repetitive to have a separate file with routes, and then still have to go to the controllers page to create objects, get information from the database and render view pages. Why not just keep the routes contained in the controller file as well?</p>
+
+<div>
+  <p><img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/01/b9nrm1-2-1200x800.jpg" alt="routes picture" /></p>
+</div>
+
+<p>After spending a bit more time with Rails, I have gotten a lot more used to working with routes, and have come to really appreciate the new setup. The separation of tasks makes the most sense right off the bat. I’ve been told over and over that it’s good practice to separate functionality to keep each file or class as focused as possible. With that in mind, it doesn’t make much sense to have the controllers responsible for handling routes AND communication between view pages and the database. This separation allows controllers to be much cleaner and act more like normal Ruby classes. Add that separation along with being able to assign several routes using “resources” and being able to call routes with “path”, I’m pretty darn happy with how routes work in Rails.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

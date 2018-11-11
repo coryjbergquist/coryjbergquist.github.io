@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Nested Forms In Rails | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Nested Forms In Rails" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I had to take a step back in order to jump forward into this complex form." />
+<meta property="og:description" content="I had to take a step back in order to jump forward into this complex form." />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-23T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"I had to take a step back in order to jump forward into this complex form.","@type":"BlogPosting","url":"/2018/08/23/nested-forms-in-rails.html","headline":"Nested Forms In Rails","dateModified":"2018-08-23T00:00:00-07:00","datePublished":"2018-08-23T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/08/23/nested-forms-in-rails.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/staff.html" >Staff</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Nested Forms In Rails</h1>
+
+<p>
+  23 Aug 2018
+  
+  
+</p>
+
+<h3> I had to take a step back in order to jump forward into this complex form. </h3>
+
+<p>I had a hard time understanding exactly what was happening while using the <code class="highlighter-rouge">fields_for</code> method, so I’ll try to break it down as best as I can. Let’s say I’m building a form that will add a category to a post. I’ll be using the <code class="highlighter-rouge">fields_for</code> method in the posts/edit.html.erb file to create a text field for users to enter a new category for a post.</p>
+
+<h4> Let's start by looking at our `fields_for` method that is inside of a `form_for` method that has an object of `@post`: </h4>
+
+<p><img src="https://78.media.tumblr.com/54576835f40f502cc23d340c34d2cc42/tumblr_pcy5820RjU1r0ch5ko1_1280.png" alt="" /></p>
+
+<p>In the picture above:</p>
+<ul>
+  <li><code class="highlighter-rouge">:categories</code> is the class instance that we’ll be creating, and it should already have a relationship to the Post class (a Post has_many :categories). This category will automatically get associated with this particular instance of Post through mass assignment.</li>
+  <li><code class="highlighter-rouge">@post.categories.build</code> gives us our Post class object that we want to create a category for (through <code class="highlighter-rouge">@post</code>) and calls the build method to make a new instance of our Category class, using the block that comes after, which creates a <code class="highlighter-rouge">text_field</code> for the <code class="highlighter-rouge">:name</code> key. This is basically creating an empty instance of the Category class, which will be filled once the user adds a name into the newly generated text field.</li>
+</ul>
+
+<h4> Using the `fields_for` method in your form gives you this HTML when you visit the page in a browser: </h4>
+
+<p><img src="https://78.media.tumblr.com/a99e8fbde52396de153835b3b205da08/tumblr_pcy5820RjU1r0ch5ko2_1280.png" alt="" /></p>
+
+<p>In the picture above:</p>
+<ul>
+  <li>The <code class="highlighter-rouge">name=</code> is what will be passed to your controller as a hash, the first part of your name must match up to the params your controller is looking for, and the setter method that you defined in your model. It must include “classname_attributes”. So if you’re trying to create a Category for an instance of a Post, then it must be “<code class="highlighter-rouge">categories_attributes</code>”.</li>
+  <li>The <code class="highlighter-rouge">[0][name]</code> that comes directly after <code class="highlighter-rouge">categories_attributes</code> is giving you a numbered array, with a key of <code class="highlighter-rouge">:name</code> (which you get from <code class="highlighter-rouge">[name]</code>).</li>
+  <li>In this case we have <code class="highlighter-rouge">post[categories_attributes][0][name]</code> because we want to add a category inside of the Post class, so the hash mush start with “post”.</li>
+  <li>All of these automatically come from using the <code class="highlighter-rouge">fields_for</code> method.</li>
+</ul>
+
+<h4> The HTML looks for this method inside of our Post model (as long as our controller is setup to accept the correct key =&gt; value pairs in our params hash): </h4>
+
+<p><img src="https://78.media.tumblr.com/18fe0a721c92998e6179fbb542f13db2/tumblr_pcy5820RjU1r0ch5ko3_1280.png" alt="" />
+In the picture above:</p>
+<ul>
+  <li>We are first searching to see if the category already exists, if it does not, we will create one. And then push that category into self.categories (self is an instance of the Post class).</li>
+</ul>
+
+<h4> Here is our post_params method that is in our PostsController: </h4>
+<p><img src="https://78.media.tumblr.com/3e23b45219f2d33ae7426ab0071779d5/tumblr_pcy5820RjU1r0ch5ko4_r1_1280.png" alt="" /></p>
+
+<p>In the picture above:</p>
+<ul>
+  <li>You can see that we are permitting the keys that we require, including <code class="highlighter-rouge">categories_attributes [:name]</code>, all of which are inside of the <code class="highlighter-rouge">params[:post]</code> hash.</li>
+</ul>
+
+<h4> Main thoughts: </h4>
+
+<p>The <code class="highlighter-rouge">fields_for</code> method automatically looks for the model method <code class="highlighter-rouge">classname_attributes=</code> in the class that you are working with (in this case, the Post class that we’re getting from @post). The “classname” will be whatever class you want to associate to the main object (which is currently an instance of Post). In this case we were making a new category for a Post, so we’re adding <code class="highlighter-rouge">def categories_attributes=</code> to our Post class, which will take an argument of whatever our params hash passes in.</p>
+
+<p>You can also get access to this model method by adding <code class="highlighter-rouge">accepts_nested_attributes_for :classname</code> to your model. However you won’t be able to customize this method, so if you need to add any sort of customization, you need to define the method manually and skip the use of <code class="highlighter-rouge">accepts_nested_attributes_for</code>.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

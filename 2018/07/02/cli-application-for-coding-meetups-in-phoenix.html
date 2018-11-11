@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Cli Application For Coding Meetups In Phoenix | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Cli Application For Coding Meetups In Phoenix" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="United we code! Divided…we still code, but it takes way longer!" />
+<meta property="og:description" content="United we code! Divided…we still code, but it takes way longer!" />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-02T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"United we code! Divided…we still code, but it takes way longer!","@type":"BlogPosting","url":"/2018/07/02/cli-application-for-coding-meetups-in-phoenix.html","headline":"Cli Application For Coding Meetups In Phoenix","dateModified":"2018-07-02T00:00:00-07:00","datePublished":"2018-07-02T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/07/02/cli-application-for-coding-meetups-in-phoenix.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/staff.html" >Staff</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Cli Application For Coding Meetups In Phoenix</h1>
+
+<p>
+  02 Jul 2018
+  
+  
+</p>
+
+<h3> United we code! Divided…we still code, but it takes way longer! </h3>
+
+<p>As I thought about what I wanted my CLI project to be, I bounced around what could have been an endless string of options. I mean, you can make a list out of just about anything, so it’s really just a matter of picking something that interests you.</p>
+
+<p>I felt a little odd picking a program that would list out coding meetups in my area. I’m sure a million people have done it before me, and a million people will do it after me, but it felt like something that I could actually benefit from. I think the more I dive into my career as a coder, the more I will want to search out these types of coding meetups, and I thought that if I have even more invested interest in this project (aside from completing it for school), then I’ll strive to make it even better.</p>
+
+<p>I started out by creating my basic file structure, following along with the video we were provided on how to create a CLI Gem. After I felt pretty comfortable with the layout, I began putting my first bits of code into my ruby file that contains my CLI controller. I paid extra attention to try and keep all of my files in the correct spot, and not do anything crazy within a particular Class. I was definitely afraid of writing code that just got more and more out of control. Luckily, because I paid so much attention to it in the beginning, I was able to work with some pretty well structured code from start to finish. Whenever errors popped up, I was able to easily trace them back to the source.</p>
+
+<p>My CLI controller (called CodingMeetups::CLI) does probably exactly what you’d think it would do. It lists my coding meetups, and then prompts the user for input to explore the meetups or add a new one. Within this Class, I accessed CodingMeetups::Meetups, which provided all of the functionality to actually scrape my website for information, and add new URLs when needed. This is probably the most comfortable I have felt while working with Classes that access information from one another (I’m glad we had so many lessons that focused on it!). I feel like starting a project from scratch actually gives you more control and you can really understand which Class is getting information and from where.</p>
+
+<p>I ran into a couple issues when trying to effectively scrape through the Meetup website because I couldn’t tell if they were adding group meetups as pictures that were attached to links (making scraping a little more difficult because the information isn’t right on that particular page). However, after a little digging, I found that each group’s page had their next available events listed, and I was able to get the basic info of the event right from their page.</p>
+
+<p>Once I got my scraping figured out, I was able to iterate over a list of URLs and return each groups name, meetup date, and bio. Adding a new URL to the mix was fairly easy, and building an ‘add URL’ function seemed like a very useful tool to have!</p>
+
+<p>I ran into one issue where my list of websites kept repeating itself whenever I would call it’s method. After using binding.pry in a few different spots, I found that all I had to do was set my @website_list variable to an empty array at the beginning of my method, and then it wouldn’t be adding the same links over and over. I could have also put in an “if” statement or used .uiniq? to only return unique elements, but I thought that simply adding @website_list = [] was much more simple and easy to read.</p>
+
+<p>After I completed the functionality to add a new website. I felt like I had created a solid program that I might actually be interested in using for myself!</p>
+
+<p>I am still a bit hazy on creating Gems (I’m sure I’ll have a lot more practice!) but I feel like I have a solid program, and I’m excited to get better at the entire process!</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

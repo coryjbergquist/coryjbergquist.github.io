@@ -1,22 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-11T10:22:21-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Kiwifruit</title><link href="/2018/08/22/kiwifruit.html" rel="alternate" type="text/html" title="Kiwifruit" /><published>2018-08-22T00:00:00-07:00</published><updated>2018-08-22T00:00:00-07:00</updated><id>/2018/08/22/kiwifruit</id><content type="html" xml:base="/2018/08/22/kiwifruit.html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-11T14:33:28-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Redux Sound Organizer</title><link href="/2018/11/10/react-redux-sound-organizer.html" rel="alternate" type="text/html" title="React Redux Sound Organizer" /><published>2018-11-10T00:00:00-07:00</published><updated>2018-11-10T00:00:00-07:00</updated><id>/2018/11/10/react-redux-sound-organizer</id><content type="html" xml:base="/2018/11/10/react-redux-sound-organizer.html">&lt;h3&gt; There's no kind of learning like building from scratch! &lt;/h3&gt;
 
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;</content><author><name>ted</name></author><summary type="html">Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.</summary></entry><entry><title type="html">Apples</title><link href="/2018/08/21/apples.html" rel="alternate" type="text/html" title="Apples" /><published>2018-08-21T00:00:00-07:00</published><updated>2018-08-21T00:00:00-07:00</updated><id>/2018/08/21/apples</id><content type="html" xml:base="/2018/08/21/apples.html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+&lt;p&gt;I have to admit, I stumbled quite a bit while learning React and Redux. Between learning a new style of coding and trying to keep track of exactly where the line was between JavaScript, React and Redux, there was a lot to take it. Throughout the entire progress I kept to one simple idea that kept me going: any progress is better than no progress. As long as I could dedicate some of my day to learning and completing a few lessons, then I could be confident that I was still moving forward.&lt;/p&gt;
 
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;</content><author><name>jill</name></author><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry><entry><title type="html">Why I Got Into Web Development</title><link href="/2018/05/26/why-i-got-into-web-development.html" rel="alternate" type="text/html" title="Why I Got Into Web Development" /><published>2018-05-26T00:00:00-07:00</published><updated>2018-05-26T00:00:00-07:00</updated><id>/2018/05/26/why-i-got-into-web-development</id><content type="html" xml:base="/2018/05/26/why-i-got-into-web-development.html">&lt;h3&gt; A barista who wants to switch from coffee to code. &lt;/h3&gt;
+&lt;p&gt;This project is made for creating small sound clips and storing them for later. Sort of like an idea notebook meant specifically for musicians, singers, or anyone who uses sounds to create something. A user can make a sound name, and description, which will be stored on a rails API. A user can also come back to that sound and make comments or delete the sound.&lt;/p&gt;
 
-&lt;p&gt;I’ve been looking for a career change for quite some time. I have been a barista for five years, and while I enjoy the fast pace environment, the awesome co-workers, and a pretty flexible schedule, I’m ready for to switch to something that can really put my mind to use. As luck would have it, I stumbled on the idea of learning to code while talking with my sister about potential job changes. I’ve always been interested in figuring out what makes things tick, and as it turns out, there’s quite a bit of ticking that goes on behind the scenes of the websites we visit on a daily basis.&lt;/p&gt;
+&lt;p&gt;While building this application, I was fresh off of several lessons about React and Redux, so I was happily excited to really get a deeper understanding of how to get the front end working just how I wanted. It took me a bit of extra reading, but I was able to get a smooth flow of creating sounds, descriptions and comments, updating my Redux store through actions and adding a root Reducer to hold any extra reducers I might create later.&lt;/p&gt;
 
-&lt;p&gt;I set out to find as much free information about coding as I could, which was enough to keep me busy for several years if I wanted! After spending about a month completing a few different free courses that focused on Ruby, I realized that this could be a real passion of mine, and I decided that I could use a little guidance in my journey and signed up for Flatiron.&lt;/p&gt;
+&lt;p&gt;The biggest problem I ran into was learning how to hook up my front end with my rails API. It took several articles and videos for me to realize that I was making things much too complicated and that my rails back end only had to be a host for my database and really nothing more. Thanks especially to my Flatiron community that came through in Slack and pointed me in the direction of a couple great videos and talked me through how I needed to get my rails API to function. Several more videos and articles later I was able to feel pretty comfortable sending different types of requests using fetch() in my actions.&lt;/p&gt;
 
-&lt;p&gt;Even after only learning the basics, I found that I could sit down and really focus on the problem solving aspects of trying to get a particular chunk of code to work. Even if my code wasn’t the prettiest, I could understand enough to see why something wasn’t working. As I spend more time, and dive into more complex code, I find that I can start thinking a little less about the language aspect, and really hone in on my problem solving skills. The more I learn the tools, the more I feel like I can accomplish!&lt;/p&gt;
+&lt;p&gt;There’s really no better way to learn than by building your own applications and I can’t wait to get started on the next one!&lt;/p&gt;</content><author><name></name></author><summary type="html">There's no kind of learning like building from scratch!</summary></entry><entry><title type="html">Javascript Context And This</title><link href="/2018/10/15/javascript-context-and-this.html" rel="alternate" type="text/html" title="Javascript Context And This" /><published>2018-10-15T00:00:00-07:00</published><updated>2018-10-15T00:00:00-07:00</updated><id>/2018/10/15/javascript-context-and-this</id><content type="html" xml:base="/2018/10/15/javascript-context-and-this.html">&lt;h3&gt; We Use &quot;this&quot; in JavaScript to reference the subject of the code that we're executing. &lt;/h3&gt;
 
-&lt;p&gt;One thing that I didn’t expect to feel, was a genuine interest in solving other people’s problems. When I first began researching about coding, I mostly focused on how I might use this information to create things for myself, but after spending a decent amount of time solving labs, I get a sincere sense of pride when I’m able to spot the issue, and problem solve my way into a block of code that functions properly. With this mindset, I feel like I will be able to happily jump into any company and work through any coding issues they might have.&lt;/p&gt;</content><author><name>Cory Bergquist</name></author><summary type="html">A barista who wants to switch from coffee to code.</summary></entry></feed>
+&lt;p&gt;Context in JavaScript refers to the object that a function belongs to. A big part of those functions can often be the use of “this”.&lt;/p&gt;
+
+&lt;p&gt;In the sentence: “John likes coding, he is learning to code right now.” We can think of the “he” as the “this” in our JavaScript code.&lt;/p&gt;
+
+&lt;p&gt;Using “this” can help make our code less prone to errors and more abstract, for example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var donut = {
+  name: &quot;ChocoGoodness&quot;,
+  flavor: &quot;Chocolate&quot;,
+  describeDonut: function () {
+    console.log(this.name + &quot; is &quot; + this.flavor + &quot; flavored.&quot;)
+	}
+}
+
+donut.describeDonut()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the above code, saying “this.name” is the same as saying “donut.name”, but this way we are being more abstract and can potentially use our function later without too much effort.&lt;/p&gt;
+
+&lt;h3&gt; Using &quot;this&quot; in your functions &lt;/h3&gt;
+
+&lt;h4&gt; &quot;this&quot; will have the value of the object that invokes the function that &quot;this&quot; is in. &lt;/h4&gt;
+
+&lt;p&gt;You can use “this” in simple functions like the code above: &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log(this.name)&lt;/code&gt;, and also when borrowing functions from one object to another. When you do this, you need to make sure that the object you are referencing is the current one. For example:&lt;/p&gt;
+
+&lt;p&gt;Let’s say we have two objects, one called “iceCream” and one called “baseballPlayer”. We are going to define a function in “iceCream” that we also want to use in our “baseball” object.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var iceCream = {
+  name: &quot;Caramel Monster Crunch&quot;,
+	showName: function () {
+	  console.log(this.name);
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt; Bind assigns &quot;this&quot; to the object you want, but does not automatically call the function. &lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var   iceCreamNameFunction = iceCream.showName.bind(iceCream);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;When we call &lt;code class=&quot;highlighter-rouge&quot;&gt;iceCream.nameFunction()&lt;/code&gt; we’ll get “Caramel Monster Crunch” in our console. Since “iceCreamNameFunction” is in global scope, if we did not use the “.bind(iceCream)”, the “this” that is inside of our “showName” function would be in global scope (which is the “window” object) because “this” always gets the value of the object that it gets invoked inside of.&lt;/p&gt;
+
+&lt;p&gt;Now we want to use that same “nameFunction()” in our baseballPlayer object.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var baseballPlayer = {
+  name: &quot;Johnny Baseball&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var baseballPlayerNameFunction = iceCream.showName.bind(baseballPlayer);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use the function that we made inside of our iceCream object, but we have to bind it to the “baseballPlayer” object so that “this” will have access to the correct object.&lt;/p&gt;
+
+&lt;h3&gt; We can also use either call() or apply() instead of bind(). &lt;/h3&gt;
+
+&lt;h4&gt; call() is similar to bind, but it is used to call that function right away without needing to assign it to anything. &lt;/h4&gt;
+
+&lt;p&gt;Let’s say we had a global variable called “name” and also an object called “baseballPlayer” that has a property of “name”.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var name = &quot;this is in global scope&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var baseballPlayer = {
+  name: &quot;Johnny Baseball&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we want to make a function that gives us the name of our baseballPlayer. This is also in global scope.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var showName = function() {
+  console.log(this.name)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But how does “showName” now what “this” is? Easy, we just use the “call()” function when were using our “showName” function.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;showName.call(baseballPlayer)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we have explicitly told “showName” that we want it to be called with the object as “baseballPlayer”. If we didn’t do this, we would get our global variable which puts “this is in global scope” to our console.&lt;/p&gt;
+
+&lt;p&gt;Using “apply()” is very similar to “call()”, the difference being, when you use “apply()” you pass in arguments as an array instead of one at a time.&lt;/p&gt;</content><author><name></name></author><summary type="html">We Use &quot;this&quot; in JavaScript to reference the subject of the code that we're executing.</summary></entry><entry><title type="html">Rails With Javascript</title><link href="/2018/10/05/rails-with-javascript.html" rel="alternate" type="text/html" title="Rails With Javascript" /><published>2018-10-05T00:00:00-07:00</published><updated>2018-10-05T00:00:00-07:00</updated><id>/2018/10/05/rails-with-javascript</id><content type="html" xml:base="/2018/10/05/rails-with-javascript.html">&lt;h3&gt; Learning a new skill is tough, but rewarding. With coding I am able to learn new skills everyday which gives me an amazing sense of accomplishment every time I conquer a new task. &lt;/h3&gt;
+
+&lt;p&gt;Starting on this project allowed me to really grasp the power of combining Rails and JavaScript. I understood the basics of JS, how to create functions and objects, how scope works and where functions need to be to have access to other functions, but combining them with a working Rails application opened up a whole new set of doors.&lt;/p&gt;
+
+&lt;p&gt;I revisited my project for an application where a user can create an account and then create reviews for movies that include title, content, and rating (out of 5). The main focus of this version of the project was to use JavaScript, AJAX and jQuery to render data without having to perform a full page refresh every time. After my initial surprise and excitement from learning that such a thing was even possible, I dove into the specifics for my app. Building your own application using these methods is a great way to get a solid grasp of how they work and what they’re capable of.&lt;/p&gt;
+
+&lt;p&gt;One issue I had was realizing how simple the jQuery/AJAX requests really could be. How data that was being supplied through the AJAX request was confusing to me at first until I realized the pattern was simply using the routes you provided in rails, hitting the controller to get data, and then giving that data to the script in the view page. Once I could wrap my head around the relative simplicity of this action, everything began to make a lot more sense.&lt;/p&gt;
+
+&lt;p&gt;Another issue I had actually ended up being fantastic practice for remember what language I am programming in. Switching between Ruby, JS, HTML, and also remembering the correct jQuery syntax, wasn’t frustrating in the slightest (even when I made mistakes). It turned out to be a really eye opening exercise that gave me a lot of confidence in being able to quickly move from one language to another without any real burden on my thought flow.&lt;/p&gt;
+
+&lt;p&gt;As I have the new functionality of my application working, I am even more excited for my future coding projects!&lt;/p&gt;</content><author><name></name></author><summary type="html">Learning a new skill is tough, but rewarding. With coding I am able to learn new skills everyday which gives me an amazing sense of accomplishment every time I conquer a new task.</summary></entry><entry><title type="html">Stepping From Ruby To Javascript</title><link href="/2018/09/22/stepping-from-ruby-to-javascript.html" rel="alternate" type="text/html" title="Stepping From Ruby To Javascript" /><published>2018-09-22T00:00:00-07:00</published><updated>2018-09-22T00:00:00-07:00</updated><id>/2018/09/22/stepping-from-ruby-to-javascript</id><content type="html" xml:base="/2018/09/22/stepping-from-ruby-to-javascript.html">&lt;h3&gt; Have one coding language under your belt? On to the next! &lt;/h3&gt;
+
+&lt;p&gt;I was happy to see that my knowledge of Ruby helped me understand the basics of JavaScript very quickly. I was seeing similar object types, the ability to assign variables, define functions (similar to Ruby’s methods), and structure code in a familiar way.&lt;/p&gt;
+
+&lt;h3&gt; Data types in JavaScript: &lt;/h3&gt;
+
+&lt;p&gt;JavaScript has seven different data types, which are as follows: numbers, strings, booleans, symbols, objects, null, and undefined. Numbers and strings are similar to what you’d see in Ruby. A number is pretty much what you’d expect (1,2,3 etc.), however, numbers in JavaScript automatically include integers, decimals, floats etc. instead of having to specify what type of number you need. And Strings are pretty straight forward, text that you find inbetween quotes (either “ “, ‘ ‘, or  ). Be sure to use the backticks if you want to use interpolation (ie: &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello, ${name})&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Booleans are pretty straight forward and can only be equal to either “true” or “false”, and will mostly be used for conditional statements, for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+let x = 2
+
+function test() {
+    if(x === 2) {
+        x++
+    }
+}
+
+test()
+
+x
+
+=&amp;gt; 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the above code, we’re assigning the variable “x” to the number “2”, then creating a function that contains an if statement checking if “x” is equal to “2”, if it is, then the block of code that follows the if statement will excecute. &lt;code class=&quot;highlighter-rouge&quot;&gt;x++&lt;/code&gt; is similar to x += 1 which will add one to whatever “x” is.  We then call the “test” function, followed by calling “x” which will show us the new value for “x”.&lt;/p&gt;
+
+&lt;p&gt;Objects in JavaScript are where things get a bit different from Ruby. Objects are a collection of keys and values (like a Ruby hash) that are between curly brackets “{ }”. JavaScript objects are still very powerful because they can hold any type of data.&lt;/p&gt;
+
+&lt;p&gt;Null is also different in JavaScript. Null is used when we intentionally want to leave the value of an object blank. Undefined means a value has not been assigned yet. And symbols can create unique values for identifying object properties.&lt;/p&gt;
+
+&lt;p&gt;I’m still learning a lot about JavaScript, and I’m excited to get a deeper understand of all that JavaScript has to offer!&lt;/p&gt;</content><author><name></name></author><summary type="html">Have one coding language under your belt? On to the next!</summary></entry><entry><title type="html">Rails Movie Reviewer</title><link href="/2018/09/11/rails-movie-reviewer.html" rel="alternate" type="text/html" title="Rails Movie Reviewer" /><published>2018-09-11T00:00:00-07:00</published><updated>2018-09-11T00:00:00-07:00</updated><id>/2018/09/11/rails-movie-reviewer</id><content type="html" xml:base="/2018/09/11/rails-movie-reviewer.html">&lt;h3&gt; Always always always...ALWAYS get your main functionality up and running before anything else. &lt;/h3&gt;
+
+&lt;p&gt;I usually try to start with a little catchy pun when writing a blog. Not today, because I fell victim to something that I knew was a bad idea and I want this to be a reminder for myself. I got distracted by adding functions that I didn’t fully understand, before I got the main parts of my application up and running.&lt;/p&gt;
+
+&lt;p&gt;This project is made to look at and create reviews from a select list of movies. Users can create a new user, and add new reviews that have a title, content and rating (1-5). When I started this project, everything went smooth enough. I created my initial models, and some basic routes. But when it came time to make my first form, I completely lost sight of my main idea and lost a lot of time. I spent about 10-12 hours researching the best way to first parse through a giant list of movies, and then add those movies to an autocomplete search function so that a user could easily select a movie and create a review without having to search through a giant list of movies.&lt;/p&gt;
+
+&lt;p&gt;How did I spend so much time on what should have been a relatively easy idea? It’s honestly still a bit of mystery to me. What I should have done, is take a second and ask my fellow classmates for pointers, but I got lost in an endless string of articles and stackoverflow posts. I think it’s important to get a deep understanding of the things that interest you, but I definitely should have kept in mind that it might not be worth it to sacrifice all of this time before I had completed the main functionality of my application.&lt;/p&gt;
+
+&lt;p&gt;After I realised my mistake, I kicked it into high gear and finished knocking out forms for users to create and edit reviews. As well as adding scope methods that would allow user to see which movies had the highest average rating.&lt;/p&gt;
+
+&lt;p&gt;I ran into a small issue when I basically created my entire application without adding nested routes as I went along. This got me confused a little bit as I created new routes in my config/routes.rb file and got a little lost in terms of which controllers my routes were sending the user to. I solved this by creating a new controller specifically to handle nested routes that could see all the reviews for a particular movie, and create reviews for that movie (movies/1/reviews/new). For the most part, I had this controller render pages from views/reviews, but having the control itself separate from my normal reviews controller helped me keep organized.&lt;/p&gt;
+
+&lt;p&gt;In the end, this was a very enjoyable project that gave me a lesson I never thought I’d need. So I say this to anyone reading, and especially to myself: Get your main functionality working before you go digging through 500 stack overflow posts!&lt;/p&gt;</content><author><name></name></author><summary type="html">Always always always...ALWAYS get your main functionality up and running before anything else.</summary></entry><entry><title type="html">Nested Forms In Rails</title><link href="/2018/08/23/nested-forms-in-rails.html" rel="alternate" type="text/html" title="Nested Forms In Rails" /><published>2018-08-23T00:00:00-07:00</published><updated>2018-08-23T00:00:00-07:00</updated><id>/2018/08/23/nested-forms-in-rails</id><content type="html" xml:base="/2018/08/23/nested-forms-in-rails.html">&lt;h3&gt; I had to take a step back in order to jump forward into this complex form. &lt;/h3&gt;
+
+&lt;p&gt;I had a hard time understanding exactly what was happening while using the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method, so I’ll try to break it down as best as I can. Let’s say I’m building a form that will add a category to a post. I’ll be using the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method in the posts/edit.html.erb file to create a text field for users to enter a new category for a post.&lt;/p&gt;
+
+&lt;h4&gt; Let's start by looking at our `fields_for` method that is inside of a `form_for` method that has an object of `@post`: &lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/54576835f40f502cc23d340c34d2cc42/tumblr_pcy5820RjU1r0ch5ko1_1280.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the picture above:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:categories&lt;/code&gt; is the class instance that we’ll be creating, and it should already have a relationship to the Post class (a Post has_many :categories). This category will automatically get associated with this particular instance of Post through mass assignment.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@post.categories.build&lt;/code&gt; gives us our Post class object that we want to create a category for (through &lt;code class=&quot;highlighter-rouge&quot;&gt;@post&lt;/code&gt;) and calls the build method to make a new instance of our Category class, using the block that comes after, which creates a &lt;code class=&quot;highlighter-rouge&quot;&gt;text_field&lt;/code&gt; for the &lt;code class=&quot;highlighter-rouge&quot;&gt;:name&lt;/code&gt; key. This is basically creating an empty instance of the Category class, which will be filled once the user adds a name into the newly generated text field.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt; Using the `fields_for` method in your form gives you this HTML when you visit the page in a browser: &lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/a99e8fbde52396de153835b3b205da08/tumblr_pcy5820RjU1r0ch5ko2_1280.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the picture above:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;name=&lt;/code&gt; is what will be passed to your controller as a hash, the first part of your name must match up to the params your controller is looking for, and the setter method that you defined in your model. It must include “classname_attributes”. So if you’re trying to create a Category for an instance of a Post, then it must be “&lt;code class=&quot;highlighter-rouge&quot;&gt;categories_attributes&lt;/code&gt;”.&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[0][name]&lt;/code&gt; that comes directly after &lt;code class=&quot;highlighter-rouge&quot;&gt;categories_attributes&lt;/code&gt; is giving you a numbered array, with a key of &lt;code class=&quot;highlighter-rouge&quot;&gt;:name&lt;/code&gt; (which you get from &lt;code class=&quot;highlighter-rouge&quot;&gt;[name]&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;In this case we have &lt;code class=&quot;highlighter-rouge&quot;&gt;post[categories_attributes][0][name]&lt;/code&gt; because we want to add a category inside of the Post class, so the hash mush start with “post”.&lt;/li&gt;
+  &lt;li&gt;All of these automatically come from using the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt; The HTML looks for this method inside of our Post model (as long as our controller is setup to accept the correct key =&amp;gt; value pairs in our params hash): &lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/18fe0a721c92998e6179fbb542f13db2/tumblr_pcy5820RjU1r0ch5ko3_1280.png&quot; alt=&quot;&quot; /&gt;
+In the picture above:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We are first searching to see if the category already exists, if it does not, we will create one. And then push that category into self.categories (self is an instance of the Post class).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt; Here is our post_params method that is in our PostsController: &lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/3e23b45219f2d33ae7426ab0071779d5/tumblr_pcy5820RjU1r0ch5ko4_r1_1280.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the picture above:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can see that we are permitting the keys that we require, including &lt;code class=&quot;highlighter-rouge&quot;&gt;categories_attributes [:name]&lt;/code&gt;, all of which are inside of the &lt;code class=&quot;highlighter-rouge&quot;&gt;params[:post]&lt;/code&gt; hash.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt; Main thoughts: &lt;/h4&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method automatically looks for the model method &lt;code class=&quot;highlighter-rouge&quot;&gt;classname_attributes=&lt;/code&gt; in the class that you are working with (in this case, the Post class that we’re getting from @post). The “classname” will be whatever class you want to associate to the main object (which is currently an instance of Post). In this case we were making a new category for a Post, so we’re adding &lt;code class=&quot;highlighter-rouge&quot;&gt;def categories_attributes=&lt;/code&gt; to our Post class, which will take an argument of whatever our params hash passes in.&lt;/p&gt;
+
+&lt;p&gt;You can also get access to this model method by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for :classname&lt;/code&gt; to your model. However you won’t be able to customize this method, so if you need to add any sort of customization, you need to define the method manually and skip the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for&lt;/code&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I had to take a step back in order to jump forward into this complex form.</summary></entry><entry><title type="html">Rails Routes</title><link href="/2018/08/06/rails-routes.html" rel="alternate" type="text/html" title="Rails Routes" /><published>2018-08-06T00:00:00-07:00</published><updated>2018-08-06T00:00:00-07:00</updated><id>/2018/08/06/rails-routes</id><content type="html" xml:base="/2018/08/06/rails-routes.html">&lt;h3&gt; They're like Sinatra routes, but just different enough to be confusing. &lt;/h3&gt;
+
+&lt;p&gt;Sinatra was pretty eye-opening for me.  I understood the main concepts of Ruby, ActiveRecord, SQL, and ERB all working together with Sinatra, and I was having a blast creating simple applications that had some real functionality. Moving on to Rails, I was excited to see that there were a lot of similarities in terms of file structure layout. Models, view pages and controllers (MVC) all seemed familiar, and I was ready to jump right in!&lt;/p&gt;
+
+&lt;p&gt;I sort of had to come full stop when I ran into how Rails handles routes. I had come to a solid understanding on how controllers and routes worked with Sinatra, but I was having a hard time wrapping my head around the separation of the two in Rails. The controllers are still very important in terms of passing information from the database to the view pages, but the actual routes themselves are in their own separate file that works quite a bit differently from Sinatra. It almost seemed a little repetitive to have a separate file with routes, and then still have to go to the controllers page to create objects, get information from the database and render view pages. Why not just keep the routes contained in the controller file as well?&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;p&gt;&lt;img src=&quot;https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/01/b9nrm1-2-1200x800.jpg&quot; alt=&quot;routes picture&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After spending a bit more time with Rails, I have gotten a lot more used to working with routes, and have come to really appreciate the new setup. The separation of tasks makes the most sense right off the bat. I’ve been told over and over that it’s good practice to separate functionality to keep each file or class as focused as possible. With that in mind, it doesn’t make much sense to have the controllers responsible for handling routes AND communication between view pages and the database. This separation allows controllers to be much cleaner and act more like normal Ruby classes. Add that separation along with being able to assign several routes using “resources” and being able to call routes with “path”, I’m pretty darn happy with how routes work in Rails.&lt;/p&gt;</content><author><name></name></author><summary type="html">They're like Sinatra routes, but just different enough to be confusing.</summary></entry><entry><title type="html">Sinatra Sound Organizer</title><link href="/2018/07/19/sinatra-sound-organizer.html" rel="alternate" type="text/html" title="Sinatra Sound Organizer" /><published>2018-07-19T00:00:00-07:00</published><updated>2018-07-19T00:00:00-07:00</updated><id>/2018/07/19/sinatra-sound-organizer</id><content type="html" xml:base="/2018/07/19/sinatra-sound-organizer.html">&lt;h3&gt; The path to learning Sinatra sure has a lot of routes you can take! &lt;/h3&gt;
+
+&lt;p&gt;After gaining a lot of confidence in my Ruby skills, dipping my feet into using HTML and CSS, and feeling pretty darn comfortable with ActiveRecord, I finally felt like I was able to put everything together with Sinatra. I finally felt like I could build something real.&lt;/p&gt;
+
+&lt;p&gt;Up until this point I felt as though I was only building small parts of an application, maybe a database here, or a static HTML web page over there. But nothing that fully worked together to form a full working application that you could see in a browser and interact with. Well that time has ended! Understanding how Sinatra works has given me new inspiration while thinking about a project as a whole. I feel like I have the ability to create more intelligently by keeping in mind how each line of code I write will affect the other parts of my program, perhaps lines that I haven’t even written yet. It’s a very liberating feeling, being able to write code with a solid grasp on exactly how that code will function and how it will look in a browser.&lt;/p&gt;
+
+&lt;p&gt;My Sinatra Sound Organizer is meant to be a program that allows users to keep track of small sounds or song ideas that they may want to revisit at a later time. Maybe they heard a really cool sounding percussive element and were able to record it, and they just want to make sure they can come back to it later. Or maybe they came up with a great chord progression for a song and don’t want to forget it. This program will allow people to create a user, and then save their sound clips (with name, description and file). Users can view all of their sounds on their home page, or see each individual sound and description, as well as edit, delete, and add new sounds.&lt;/p&gt;
+
+&lt;p&gt;Starting on this particular project was actually fairly easy. After familiarizing myself with a few basic Sinatra layouts, I was able to create the framework of my application (making sure to include a README, gem file, environment etc.) and begin writing the code for my MVC structure. We have had a lot of practice building correct routes for creating objects, saving them in the database, and returning them back to the view page, which made making my own routes a breeze.&lt;/p&gt;
+
+&lt;p&gt;I ran into a little bit of a hiccup when I had a bit of an overload of information on my index view page. My idea was to have the main index page contain either the login/sign up forms or the users main list of sounds, depending on if the current user was logged in or not. So as soon as you navigated to the main page you could potentially immediately see the sounds that you have uploaded. However, this proved to be a little messy looking, and I didn’t want to start overloading my view pages when it wasn’t really necessary. So I settled on creating a separate login/sign up page, and inside my controller route for “/” I used my “is_logged_in?” helper method to either redirect the user to their sounds page, or directly render the login/sign up page. This way, my views pages stayed a bit more clean, and I still had the function of being able to see my sounds simply by going to the root url (as long as I was already logged in).&lt;/p&gt;
+
+&lt;p&gt;Another issue I had was finding out the correct search path for finding uploaded files. I could see that my browser was sending me a file name and a temp file, but I wasn’t aware how to actually get the newly uploaded file onto my sound’s view page. I found that I needed to create the file in the “public” directory so that it could be found by name when it was called in my views page. I was happy to find that I was able to submit both the file and text in my form by using enctype=”multipart/form-data”.&lt;/p&gt;
+
+&lt;p&gt;I spent just a bit of time adding bootstrap to my application to clean up the view pages a little (I plan on spending more time getting the views to look better), but it was nice to focus mostly on creating a functional web application, and I’m very happy with the result.&lt;/p&gt;</content><author><name></name></author><summary type="html">The path to learning Sinatra sure has a lot of routes you can take!</summary></entry><entry><title type="html">Cli Application For Coding Meetups In Phoenix</title><link href="/2018/07/02/cli-application-for-coding-meetups-in-phoenix.html" rel="alternate" type="text/html" title="Cli Application For Coding Meetups In Phoenix" /><published>2018-07-02T00:00:00-07:00</published><updated>2018-07-02T00:00:00-07:00</updated><id>/2018/07/02/cli-application-for-coding-meetups-in-phoenix</id><content type="html" xml:base="/2018/07/02/cli-application-for-coding-meetups-in-phoenix.html">&lt;h3&gt; United we code! Divided…we still code, but it takes way longer! &lt;/h3&gt;
+
+&lt;p&gt;As I thought about what I wanted my CLI project to be, I bounced around what could have been an endless string of options. I mean, you can make a list out of just about anything, so it’s really just a matter of picking something that interests you.&lt;/p&gt;
+
+&lt;p&gt;I felt a little odd picking a program that would list out coding meetups in my area. I’m sure a million people have done it before me, and a million people will do it after me, but it felt like something that I could actually benefit from. I think the more I dive into my career as a coder, the more I will want to search out these types of coding meetups, and I thought that if I have even more invested interest in this project (aside from completing it for school), then I’ll strive to make it even better.&lt;/p&gt;
+
+&lt;p&gt;I started out by creating my basic file structure, following along with the video we were provided on how to create a CLI Gem. After I felt pretty comfortable with the layout, I began putting my first bits of code into my ruby file that contains my CLI controller. I paid extra attention to try and keep all of my files in the correct spot, and not do anything crazy within a particular Class. I was definitely afraid of writing code that just got more and more out of control. Luckily, because I paid so much attention to it in the beginning, I was able to work with some pretty well structured code from start to finish. Whenever errors popped up, I was able to easily trace them back to the source.&lt;/p&gt;
+
+&lt;p&gt;My CLI controller (called CodingMeetups::CLI) does probably exactly what you’d think it would do. It lists my coding meetups, and then prompts the user for input to explore the meetups or add a new one. Within this Class, I accessed CodingMeetups::Meetups, which provided all of the functionality to actually scrape my website for information, and add new URLs when needed. This is probably the most comfortable I have felt while working with Classes that access information from one another (I’m glad we had so many lessons that focused on it!). I feel like starting a project from scratch actually gives you more control and you can really understand which Class is getting information and from where.&lt;/p&gt;
+
+&lt;p&gt;I ran into a couple issues when trying to effectively scrape through the Meetup website because I couldn’t tell if they were adding group meetups as pictures that were attached to links (making scraping a little more difficult because the information isn’t right on that particular page). However, after a little digging, I found that each group’s page had their next available events listed, and I was able to get the basic info of the event right from their page.&lt;/p&gt;
+
+&lt;p&gt;Once I got my scraping figured out, I was able to iterate over a list of URLs and return each groups name, meetup date, and bio. Adding a new URL to the mix was fairly easy, and building an ‘add URL’ function seemed like a very useful tool to have!&lt;/p&gt;
+
+&lt;p&gt;I ran into one issue where my list of websites kept repeating itself whenever I would call it’s method. After using binding.pry in a few different spots, I found that all I had to do was set my @website_list variable to an empty array at the beginning of my method, and then it wouldn’t be adding the same links over and over. I could have also put in an “if” statement or used .uiniq? to only return unique elements, but I thought that simply adding @website_list = [] was much more simple and easy to read.&lt;/p&gt;
+
+&lt;p&gt;After I completed the functionality to add a new website. I felt like I had created a solid program that I might actually be interested in using for myself!&lt;/p&gt;
+
+&lt;p&gt;I am still a bit hazy on creating Gems (I’m sure I’ll have a lot more practice!) but I feel like I have a solid program, and I’m excited to get better at the entire process!&lt;/p&gt;</content><author><name></name></author><summary type="html">United we code! Divided…we still code, but it takes way longer!</summary></entry><entry><title type="html">Booleans In Our Lives</title><link href="/2018/06/14/booleans-in-our-lives.html" rel="alternate" type="text/html" title="Booleans In Our Lives" /><published>2018-06-14T00:00:00-07:00</published><updated>2018-06-14T00:00:00-07:00</updated><id>/2018/06/14/booleans-in-our-lives</id><content type="html" xml:base="/2018/06/14/booleans-in-our-lives.html">&lt;h3&gt;
+Life would be easier if things were just black and white. With Booleans, they are!
+&lt;/h3&gt;
+
+&lt;p&gt;You might find comfort in certain elements of life being black and white. You are either alive, or dead. You can either smell, breathe, see, feel, walk, talk, or do none of those things. But we all know that nothing is ever that simple. You might be able to see, but only just barely. Maybe you’re considered legally blind, but you can still make out fuzzy shapes. Maybe you have a terrible sense of smell, and according to everyone you know, you can’t smell anything, but technically, you can smell some of the most smelly smells there are!&lt;/p&gt;
+
+&lt;p&gt;With all this craziness, and so much grey area in our world, wouldn’t it be nice if you could just make some things either right or wrong? Well say no more! Enter the boolean! These bad boys will slice and dice all your questions into one of two big chunks. You’re either right, or your wrong. You’re either alive, or your dead. If you need something to tell you exactly where you stand, a boolean can take your question (a.k.a. your code) and pump out a steady answer that can affect the rest of your life (a.k.a. the rest of your program). Thanks booleans!&lt;/p&gt;</content><author><name>Cory Bergquist</name></author><summary type="html">Life would be easier if things were just black and white. With Booleans, they are!</summary></entry></feed>

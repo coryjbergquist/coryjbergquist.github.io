@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-19T10:49:00-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Redux Sound Organizer</title><link href="/2018/11/10/react-redux-sound-organizer.html" rel="alternate" type="text/html" title="React Redux Sound Organizer" /><published>2018-11-10T00:00:00-07:00</published><updated>2018-11-10T00:00:00-07:00</updated><id>/2018/11/10/react-redux-sound-organizer</id><content type="html" xml:base="/2018/11/10/react-redux-sound-organizer.html">&lt;h3&gt; There's no kind of learning like building from scratch! &lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-25T17:06:49-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Hoisting State</title><link href="/2018/11/25/react-hoisting-state.html" rel="alternate" type="text/html" title="React Hoisting State" /><published>2018-11-25T00:00:00-07:00</published><updated>2018-11-25T00:00:00-07:00</updated><id>/2018/11/25/react-hoisting-state</id><content type="html" xml:base="/2018/11/25/react-hoisting-state.html">&lt;h3&gt;A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program.&lt;/h3&gt;
+
+&lt;p&gt;State is a user defined JavaScript object that contains data specific to that component. What happens when we want the information from one component’s state accessible in another component?&lt;/p&gt;
+
+&lt;p&gt;Let’s say we want to show a list of names, but we don’t want the component that displays the names to be responsible for fetching the names. We can create a container component that works like a parent to the child component (which has the code to display the list of names). In the code below, our container component (myComponent) will call an API to get a list of names, assign those names to the state of myComponent, and then pass those names to the AllNames child component (also called a presentational component because it’s job is to render HTML).&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import react from 'react'
+import AllNames from 'AllNames'
+
+export class myComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {names: []}
+  }
+  componentDidMount() {
+    //the getNames() function would call an API that has all the names
+    const names = getNames()
+    this.setState({names})
+  }
+
+  render() {
+    const {names} = this.state
+    return(
+      &amp;lt;div&amp;gt;
+      &amp;lt;AllNames allNames={names} /&amp;gt;
+      &amp;lt;/div&amp;gt;
+      )
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bonus: If the data can be passed in through props, it doesn’t need to be in the state of the child component.&lt;/p&gt;
+
+&lt;p&gt;When hoisting state in React, a parent (container) component can make a call to an API to set state, then pass the state into the child component via props so that the child components can be stateless pure functions. (ex. returning a div with the information from props).&lt;/p&gt;</content><author><name></name></author><summary type="html">A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program.</summary></entry><entry><title type="html">React Redux Sound Organizer</title><link href="/2018/11/10/react-redux-sound-organizer.html" rel="alternate" type="text/html" title="React Redux Sound Organizer" /><published>2018-11-10T00:00:00-07:00</published><updated>2018-11-10T00:00:00-07:00</updated><id>/2018/11/10/react-redux-sound-organizer</id><content type="html" xml:base="/2018/11/10/react-redux-sound-organizer.html">&lt;h3&gt; There's no kind of learning like building from scratch! &lt;/h3&gt;
 
 &lt;p&gt;I have to admit, I stumbled quite a bit while learning React and Redux. Between learning a new style of coding and trying to keep track of exactly where the line was between JavaScript, React and Redux, there was a lot to take it. Throughout the entire progress I kept to one simple idea that kept me going: any progress is better than no progress. As long as I could dedicate some of my day to learning and completing a few lessons, then I could be confident that I was still moving forward.&lt;/p&gt;
 
@@ -230,10 +263,4 @@ In the picture above:&lt;/p&gt;
 
 &lt;p&gt;After I completed the functionality to add a new website. I felt like I had created a solid program that I might actually be interested in using for myself!&lt;/p&gt;
 
-&lt;p&gt;I am still a bit hazy on creating Gems (I’m sure I’ll have a lot more practice!) but I feel like I have a solid program, and I’m excited to get better at the entire process!&lt;/p&gt;</content><author><name></name></author><summary type="html">United we code! Divided…we still code, but it takes way longer!</summary></entry><entry><title type="html">Booleans In Our Lives</title><link href="/2018/06/14/booleans-in-our-lives.html" rel="alternate" type="text/html" title="Booleans In Our Lives" /><published>2018-06-14T00:00:00-07:00</published><updated>2018-06-14T00:00:00-07:00</updated><id>/2018/06/14/booleans-in-our-lives</id><content type="html" xml:base="/2018/06/14/booleans-in-our-lives.html">&lt;h3&gt;
-Life would be easier if things were just black and white. With Booleans, they are!
-&lt;/h3&gt;
-
-&lt;p&gt;You might find comfort in certain elements of life being black and white. You are either alive, or dead. You can either smell, breathe, see, feel, walk, talk, or do none of those things. But we all know that nothing is ever that simple. You might be able to see, but only just barely. Maybe you’re considered legally blind, but you can still make out fuzzy shapes. Maybe you have a terrible sense of smell, and according to everyone you know, you can’t smell anything, but technically, you can smell some of the most smelly smells there are!&lt;/p&gt;
-
-&lt;p&gt;With all this craziness, and so much grey area in our world, wouldn’t it be nice if you could just make some things either right or wrong? Well say no more! Enter the boolean! These bad boys will slice and dice all your questions into one of two big chunks. You’re either right, or your wrong. You’re either alive, or your dead. If you need something to tell you exactly where you stand, a boolean can take your question (a.k.a. your code) and pump out a steady answer that can affect the rest of your life (a.k.a. the rest of your program). Thanks booleans!&lt;/p&gt;</content><author><name>Cory Bergquist</name></author><summary type="html">Life would be easier if things were just black and white. With Booleans, they are!</summary></entry></feed>
+&lt;p&gt;I am still a bit hazy on creating Gems (I’m sure I’ll have a lot more practice!) but I feel like I have a solid program, and I’m excited to get better at the entire process!&lt;/p&gt;</content><author><name></name></author><summary type="html">United we code! Divided…we still code, but it takes way longer!</summary></entry></feed>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>React Hoisting State | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="React Hoisting State" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program." />
+<meta property="og:description" content="A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program." />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-25T00:00:00-07:00" />
+<script type="application/ld+json">
+{"url":"/2018/11/25/react-hoisting-state.html","dateModified":"2018-11-25T00:00:00-07:00","datePublished":"2018-11-25T00:00:00-07:00","headline":"React Hoisting State","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/11/25/react-hoisting-state.html"},"description":"A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>React Hoisting State</h1>
+
+<p>
+  25 Nov 2018
+  
+  
+</p>
+
+<h3>A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program.</h3>
+
+<p>State is a user defined JavaScript object that contains data specific to that component. What happens when we want the information from one component’s state accessible in another component?</p>
+
+<p>Let’s say we want to show a list of names, but we don’t want the component that displays the names to be responsible for fetching the names. We can create a container component that works like a parent to the child component (which has the code to display the list of names). In the code below, our container component (myComponent) will call an API to get a list of names, assign those names to the state of myComponent, and then pass those names to the AllNames child component (also called a presentational component because it’s job is to render HTML).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import react from 'react'
+import AllNames from 'AllNames'
+
+export class myComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {names: []}
+  }
+  componentDidMount() {
+    //the getNames() function would call an API that has all the names
+    const names = getNames()
+    this.setState({names})
+  }
+
+  render() {
+    const {names} = this.state
+    return(
+      &lt;div&gt;
+      &lt;AllNames allNames={names} /&gt;
+      &lt;/div&gt;
+      )
+  }
+}
+</code></pre></div></div>
+
+<p>Bonus: If the data can be passed in through props, it doesn’t need to be in the state of the child component.</p>
+
+<p>When hoisting state in React, a parent (container) component can make a call to an API to set state, then pass the state into the child component via props so that the child components can be stateless pure functions. (ex. returning a div with the information from props).</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

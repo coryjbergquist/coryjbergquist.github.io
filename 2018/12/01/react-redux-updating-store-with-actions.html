@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>React Redux Updating Store With Actions | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="React Redux Updating Store With Actions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There can be quite a bit happening during an update of your Redux store, here&#39;s a quick example to help make sense of the major steps." />
+<meta property="og:description" content="There can be quite a bit happening during an update of your Redux store, here&#39;s a quick example to help make sense of the major steps." />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-01T00:00:00-07:00" />
+<script type="application/ld+json">
+{"url":"/2018/12/01/react-redux-updating-store-with-actions.html","dateModified":"2018-12-01T00:00:00-07:00","datePublished":"2018-12-01T00:00:00-07:00","headline":"React Redux Updating Store With Actions","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/12/01/react-redux-updating-store-with-actions.html"},"description":"There can be quite a bit happening during an update of your Redux store, here&#39;s a quick example to help make sense of the major steps.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>React Redux Updating Store With Actions</h1>
+
+<p>
+  01 Dec 2018
+  
+  
+</p>
+
+<h3>There can be quite a bit happening during an update of your Redux store, here's a quick example to help make sense of the major steps.</h3>
+
+<p>I’m going to keep this article specific to updating the Redux store, so to begin, we’ll assume that you have some knowledge of Redux, React, JavaScript, and that you have these things already up and running. Ok, let’s get to it!</p>
+
+<p>We need a Redux store, let’s say it’s a list of books, and we’ll get it through assigning default settings in our books_reducer.js file (which holds our booksReducer function).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export default function booksReducer(state= {
+  books: [“The Big Book of JavaScript”, “React and Redux, a Love Story”, “H4x for Cats”],
+}, action) {
+  Switch ( action.type ) {
+
+  case ‘FETCH_BOOKS’:
+        return { ...state, books: action.payload}
+}
+</code></pre></div></div>
+<blockquote>
+  <p><em>In the above code, we have a switch statement that uses action.type as an expression, and the case for ‘FETCH_BOOKS’ could be used with an action that receives data from an API.</em></p>
+</blockquote>
+
+<p>We create our Redux store, inside of our “index.js” file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const store = createStore(rootReducer, applyMiddleware(thunk));
+
+</code></pre></div></div>
+<blockquote>
+  <p><em>“rootReducer” is imported at the top of our file and is used to combine multiple reducers into one object. “Thunk” in “applyMiddleware(thunk)”, allows us to create action creators that return functions.</em></p>
+</blockquote>
+
+<p>To change our store, we’ll use our booksReducer, and we’ll need to dispatch an action.</p>
+
+<p>Actions contain the key: “type” which dictates what the switch statement in your reducer will match to. Now we’ll make a function that dispatches an action to add a book to our list of books.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function addBook() {
+    return dispatch =&gt; {
+      dispatch({type: 'ADD_BOOK', payload: "Star Wars: A New Book"};
+    };
+  }
+
+</code></pre></div></div>
+<blockquote>
+  <p><em>Dispatch takes an action, then sets state to whatever your reducer returns. The reducer is called within dispatch and gets the action from dispatch, and receives the data placed in “payload”.</em></p>
+</blockquote>
+
+<p>Next we’ll add a switch case for ‘ADD_BOOK’ so that our reducer can add the new book.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export default function booksReducer(state= {
+  books: [“This Big Book of JavaScript”, “React and Redux, a Love Story”, “H4x for Cats”],
+}, action) {
+  Switch ( action.type ) {
+
+  Case ‘ADD_BOOK’:
+        return { ...state, books: action.payload }
+
+  case ‘FETCH_BOOKS’:
+        return { ...state, books: action.payload }
+}
+</code></pre></div></div>
+
+<p>We will call addBook(), most likely with data from the state of a component that has an input form to add new items, and if everything goes according to plan, our Redux store will be updated with our new book!</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

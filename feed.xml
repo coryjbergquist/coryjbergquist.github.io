@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-11-25T17:06:49-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Hoisting State</title><link href="/2018/11/25/react-hoisting-state.html" rel="alternate" type="text/html" title="React Hoisting State" /><published>2018-11-25T00:00:00-07:00</published><updated>2018-11-25T00:00:00-07:00</updated><id>/2018/11/25/react-hoisting-state</id><content type="html" xml:base="/2018/11/25/react-hoisting-state.html">&lt;h3&gt;A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program.&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-01T17:11:02-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Redux Updating Store With Actions</title><link href="/2018/12/01/react-redux-updating-store-with-actions.html" rel="alternate" type="text/html" title="React Redux Updating Store With Actions" /><published>2018-12-01T00:00:00-07:00</published><updated>2018-12-01T00:00:00-07:00</updated><id>/2018/12/01/react-redux-updating-store-with-actions</id><content type="html" xml:base="/2018/12/01/react-redux-updating-store-with-actions.html">&lt;h3&gt;There can be quite a bit happening during an update of your Redux store, here's a quick example to help make sense of the major steps.&lt;/h3&gt;
+
+&lt;p&gt;I’m going to keep this article specific to updating the Redux store, so to begin, we’ll assume that you have some knowledge of Redux, React, JavaScript, and that you have these things already up and running. Ok, let’s get to it!&lt;/p&gt;
+
+&lt;p&gt;We need a Redux store, let’s say it’s a list of books, and we’ll get it through assigning default settings in our books_reducer.js file (which holds our booksReducer function).&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default function booksReducer(state= {
+  books: [“The Big Book of JavaScript”, “React and Redux, a Love Story”, “H4x for Cats”],
+}, action) {
+  Switch ( action.type ) {
+
+  case ‘FETCH_BOOKS’:
+        return { ...state, books: action.payload}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;In the above code, we have a switch statement that uses action.type as an expression, and the case for ‘FETCH_BOOKS’ could be used with an action that receives data from an API.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We create our Redux store, inside of our “index.js” file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const store = createStore(rootReducer, applyMiddleware(thunk));
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“rootReducer” is imported at the top of our file and is used to combine multiple reducers into one object. “Thunk” in “applyMiddleware(thunk)”, allows us to create action creators that return functions.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To change our store, we’ll use our booksReducer, and we’ll need to dispatch an action.&lt;/p&gt;
+
+&lt;p&gt;Actions contain the key: “type” which dictates what the switch statement in your reducer will match to. Now we’ll make a function that dispatches an action to add a book to our list of books.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  function addBook() {
+    return dispatch =&amp;gt; {
+      dispatch({type: 'ADD_BOOK', payload: &quot;Star Wars: A New Book&quot;};
+    };
+  }
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Dispatch takes an action, then sets state to whatever your reducer returns. The reducer is called within dispatch and gets the action from dispatch, and receives the data placed in “payload”.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Next we’ll add a switch case for ‘ADD_BOOK’ so that our reducer can add the new book.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default function booksReducer(state= {
+  books: [“This Big Book of JavaScript”, “React and Redux, a Love Story”, “H4x for Cats”],
+}, action) {
+  Switch ( action.type ) {
+
+  Case ‘ADD_BOOK’:
+        return { ...state, books: action.payload }
+
+  case ‘FETCH_BOOKS’:
+        return { ...state, books: action.payload }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We will call addBook(), most likely with data from the state of a component that has an input form to add new items, and if everything goes according to plan, our Redux store will be updated with our new book!&lt;/p&gt;</content><author><name></name></author><summary type="html">There can be quite a bit happening during an update of your Redux store, here's a quick example to help make sense of the major steps.</summary></entry><entry><title type="html">React Hoisting State</title><link href="/2018/11/25/react-hoisting-state.html" rel="alternate" type="text/html" title="React Hoisting State" /><published>2018-11-25T00:00:00-07:00</published><updated>2018-11-25T00:00:00-07:00</updated><id>/2018/11/25/react-hoisting-state</id><content type="html" xml:base="/2018/11/25/react-hoisting-state.html">&lt;h3&gt;A bit different from hoisting variables in JavaScript, but still focusing on how you pass information throughout your program.&lt;/h3&gt;
 
 &lt;p&gt;State is a user defined JavaScript object that contains data specific to that component. What happens when we want the information from one component’s state accessible in another component?&lt;/p&gt;
 
@@ -245,22 +302,4 @@ In the picture above:&lt;/p&gt;
 
 &lt;p&gt;Another issue I had was finding out the correct search path for finding uploaded files. I could see that my browser was sending me a file name and a temp file, but I wasn’t aware how to actually get the newly uploaded file onto my sound’s view page. I found that I needed to create the file in the “public” directory so that it could be found by name when it was called in my views page. I was happy to find that I was able to submit both the file and text in my form by using enctype=”multipart/form-data”.&lt;/p&gt;
 
-&lt;p&gt;I spent just a bit of time adding bootstrap to my application to clean up the view pages a little (I plan on spending more time getting the views to look better), but it was nice to focus mostly on creating a functional web application, and I’m very happy with the result.&lt;/p&gt;</content><author><name></name></author><summary type="html">The path to learning Sinatra sure has a lot of routes you can take!</summary></entry><entry><title type="html">Cli Application For Coding Meetups In Phoenix</title><link href="/2018/07/02/cli-application-for-coding-meetups-in-phoenix.html" rel="alternate" type="text/html" title="Cli Application For Coding Meetups In Phoenix" /><published>2018-07-02T00:00:00-07:00</published><updated>2018-07-02T00:00:00-07:00</updated><id>/2018/07/02/cli-application-for-coding-meetups-in-phoenix</id><content type="html" xml:base="/2018/07/02/cli-application-for-coding-meetups-in-phoenix.html">&lt;h3&gt; United we code! Divided…we still code, but it takes way longer! &lt;/h3&gt;
-
-&lt;p&gt;As I thought about what I wanted my CLI project to be, I bounced around what could have been an endless string of options. I mean, you can make a list out of just about anything, so it’s really just a matter of picking something that interests you.&lt;/p&gt;
-
-&lt;p&gt;I felt a little odd picking a program that would list out coding meetups in my area. I’m sure a million people have done it before me, and a million people will do it after me, but it felt like something that I could actually benefit from. I think the more I dive into my career as a coder, the more I will want to search out these types of coding meetups, and I thought that if I have even more invested interest in this project (aside from completing it for school), then I’ll strive to make it even better.&lt;/p&gt;
-
-&lt;p&gt;I started out by creating my basic file structure, following along with the video we were provided on how to create a CLI Gem. After I felt pretty comfortable with the layout, I began putting my first bits of code into my ruby file that contains my CLI controller. I paid extra attention to try and keep all of my files in the correct spot, and not do anything crazy within a particular Class. I was definitely afraid of writing code that just got more and more out of control. Luckily, because I paid so much attention to it in the beginning, I was able to work with some pretty well structured code from start to finish. Whenever errors popped up, I was able to easily trace them back to the source.&lt;/p&gt;
-
-&lt;p&gt;My CLI controller (called CodingMeetups::CLI) does probably exactly what you’d think it would do. It lists my coding meetups, and then prompts the user for input to explore the meetups or add a new one. Within this Class, I accessed CodingMeetups::Meetups, which provided all of the functionality to actually scrape my website for information, and add new URLs when needed. This is probably the most comfortable I have felt while working with Classes that access information from one another (I’m glad we had so many lessons that focused on it!). I feel like starting a project from scratch actually gives you more control and you can really understand which Class is getting information and from where.&lt;/p&gt;
-
-&lt;p&gt;I ran into a couple issues when trying to effectively scrape through the Meetup website because I couldn’t tell if they were adding group meetups as pictures that were attached to links (making scraping a little more difficult because the information isn’t right on that particular page). However, after a little digging, I found that each group’s page had their next available events listed, and I was able to get the basic info of the event right from their page.&lt;/p&gt;
-
-&lt;p&gt;Once I got my scraping figured out, I was able to iterate over a list of URLs and return each groups name, meetup date, and bio. Adding a new URL to the mix was fairly easy, and building an ‘add URL’ function seemed like a very useful tool to have!&lt;/p&gt;
-
-&lt;p&gt;I ran into one issue where my list of websites kept repeating itself whenever I would call it’s method. After using binding.pry in a few different spots, I found that all I had to do was set my @website_list variable to an empty array at the beginning of my method, and then it wouldn’t be adding the same links over and over. I could have also put in an “if” statement or used .uiniq? to only return unique elements, but I thought that simply adding @website_list = [] was much more simple and easy to read.&lt;/p&gt;
-
-&lt;p&gt;After I completed the functionality to add a new website. I felt like I had created a solid program that I might actually be interested in using for myself!&lt;/p&gt;
-
-&lt;p&gt;I am still a bit hazy on creating Gems (I’m sure I’ll have a lot more practice!) but I feel like I have a solid program, and I’m excited to get better at the entire process!&lt;/p&gt;</content><author><name></name></author><summary type="html">United we code! Divided…we still code, but it takes way longer!</summary></entry></feed>
+&lt;p&gt;I spent just a bit of time adding bootstrap to my application to clean up the view pages a little (I plan on spending more time getting the views to look better), but it was nice to focus mostly on creating a functional web application, and I’m very happy with the result.&lt;/p&gt;</content><author><name></name></author><summary type="html">The path to learning Sinatra sure has a lot of routes you can take!</summary></entry></feed>

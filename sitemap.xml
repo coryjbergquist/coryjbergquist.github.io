@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/authors/jill.html</loc>
-<lastmod>2018-12-13T11:29:21-07:00</lastmod>
+<lastmod>2018-12-13T15:33:36-07:00</lastmod>
 </url>
 <url>
 <loc>/2018/05/26/why-i-got-into-web-development.html</loc>
@@ -59,6 +59,10 @@
 <url>
 <loc>/2018/12/06/react-container-and-presentational-components.html</loc>
 <lastmod>2018-12-06T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>/2018/12/13/making-routes-with-react-router.html</loc>
+<lastmod>2018-12-13T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>/about.html</loc>

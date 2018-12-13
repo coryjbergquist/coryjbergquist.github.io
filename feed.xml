@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-13T11:29:21-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Container And Presentational Components</title><link href="/2018/12/06/react-container-and-presentational-components.html" rel="alternate" type="text/html" title="React Container And Presentational Components" /><published>2018-12-06T00:00:00-07:00</published><updated>2018-12-06T00:00:00-07:00</updated><id>/2018/12/06/react-container-and-presentational-components</id><content type="html" xml:base="/2018/12/06/react-container-and-presentational-components.html">&lt;h3&gt;If we're going to follow best coding practices, then we better separate our concerns.&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-13T15:33:36-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Making Routes With React Router</title><link href="/2018/12/13/making-routes-with-react-router.html" rel="alternate" type="text/html" title="Making Routes With React Router" /><published>2018-12-13T00:00:00-07:00</published><updated>2018-12-13T00:00:00-07:00</updated><id>/2018/12/13/making-routes-with-react-router</id><content type="html" xml:base="/2018/12/13/making-routes-with-react-router.html">&lt;h3&gt;My single page application is great, but I want more!&lt;/h3&gt;
+
+&lt;p&gt;We all love using React and Redux, but what happens when we get tired of our URL constantly sitting at “rockin-website.com/index” regardless of what sort of content we’re viewing? Enter React Router!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I feel like React Routes can get a little overwhelming when adding it to a potentially already complex application, so I’m going to break this down into at least two articles, this first article being focused on a quick intro to get some basic functionality across&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ll start by importing a few basic things into our file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from 'react'
+import Provider from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Provider gives us access to the Redux store, BrowserRouter (which we’ll be using as Router) will be the parent to all of our other routes and will hold a history object, Switch allows us to choose between several routes, and Route is what we’ll use to decide what component we want to render when we type in a certain URL.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of using all of those can look like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from 'react'
+import Provider from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import AllLists from './AllLists'
+import CatList from './CatList'
+import FoodList from './FoodList'
+
+class MyListRouter extends React.Component {
+
+  render() {
+    return (
+      &amp;lt;Router&amp;gt;
+        &amp;lt;Switch&amp;gt;
+          &amp;lt;Route exact path='/' component={ AllLists }
+          &amp;lt;Route path='/catlist' component={ CatList }
+          &amp;lt;Route path='/foodlist' component={ FoodList }
+        &amp;lt;/Switch&amp;gt;
+      &amp;lt;/BrowserRouter&amp;gt;
+      )
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the above code we use our Router (which is the BrowserRouter) to wrap the our Switch and also each Route. In the the path prop of each Route we specify the URL that we are looking for, and in the component prop, we specify which component we want to render, when the URL matches that path prop.&lt;/p&gt;
+
+&lt;p&gt;In my next blog we’ll cover nested routes and using the history to redirect the user after certain actions.&lt;/p&gt;</content><author><name></name></author><summary type="html">My single page application is great, but I want more!</summary></entry><entry><title type="html">React Container And Presentational Components</title><link href="/2018/12/06/react-container-and-presentational-components.html" rel="alternate" type="text/html" title="React Container And Presentational Components" /><published>2018-12-06T00:00:00-07:00</published><updated>2018-12-06T00:00:00-07:00</updated><id>/2018/12/06/react-container-and-presentational-components</id><content type="html" xml:base="/2018/12/06/react-container-and-presentational-components.html">&lt;h3&gt;If we're going to follow best coding practices, then we better separate our concerns.&lt;/h3&gt;
 
 &lt;p&gt;When working with an MVC (model view controller) pattern, it’s pretty common to use a restaurant example. The chef is the model, they get the food (data), the waiter is the controller, they take orders (user input), and the table is the view, it holds the food for you to see. Using this architecture our code has a separation of concerns so if we need to change one element, it has much less of a chance to ruin the other parts of our project. Changing the view shouldn’t spring up any problems with your model or controller.&lt;/p&gt;
 
@@ -327,14 +371,4 @@ In the picture above:&lt;/p&gt;
 
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method automatically looks for the model method &lt;code class=&quot;highlighter-rouge&quot;&gt;classname_attributes=&lt;/code&gt; in the class that you are working with (in this case, the Post class that we’re getting from @post). The “classname” will be whatever class you want to associate to the main object (which is currently an instance of Post). In this case we were making a new category for a Post, so we’re adding &lt;code class=&quot;highlighter-rouge&quot;&gt;def categories_attributes=&lt;/code&gt; to our Post class, which will take an argument of whatever our params hash passes in.&lt;/p&gt;
 
-&lt;p&gt;You can also get access to this model method by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for :classname&lt;/code&gt; to your model. However you won’t be able to customize this method, so if you need to add any sort of customization, you need to define the method manually and skip the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for&lt;/code&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I had to take a step back in order to jump forward into this complex form.</summary></entry><entry><title type="html">Rails Routes</title><link href="/2018/08/06/rails-routes.html" rel="alternate" type="text/html" title="Rails Routes" /><published>2018-08-06T00:00:00-07:00</published><updated>2018-08-06T00:00:00-07:00</updated><id>/2018/08/06/rails-routes</id><content type="html" xml:base="/2018/08/06/rails-routes.html">&lt;h3&gt; They're like Sinatra routes, but just different enough to be confusing. &lt;/h3&gt;
-
-&lt;p&gt;Sinatra was pretty eye-opening for me.  I understood the main concepts of Ruby, ActiveRecord, SQL, and ERB all working together with Sinatra, and I was having a blast creating simple applications that had some real functionality. Moving on to Rails, I was excited to see that there were a lot of similarities in terms of file structure layout. Models, view pages and controllers (MVC) all seemed familiar, and I was ready to jump right in!&lt;/p&gt;
-
-&lt;p&gt;I sort of had to come full stop when I ran into how Rails handles routes. I had come to a solid understanding on how controllers and routes worked with Sinatra, but I was having a hard time wrapping my head around the separation of the two in Rails. The controllers are still very important in terms of passing information from the database to the view pages, but the actual routes themselves are in their own separate file that works quite a bit differently from Sinatra. It almost seemed a little repetitive to have a separate file with routes, and then still have to go to the controllers page to create objects, get information from the database and render view pages. Why not just keep the routes contained in the controller file as well?&lt;/p&gt;
-
-&lt;div&gt;
-  &lt;p&gt;&lt;img src=&quot;https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/01/b9nrm1-2-1200x800.jpg&quot; alt=&quot;routes picture&quot; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;After spending a bit more time with Rails, I have gotten a lot more used to working with routes, and have come to really appreciate the new setup. The separation of tasks makes the most sense right off the bat. I’ve been told over and over that it’s good practice to separate functionality to keep each file or class as focused as possible. With that in mind, it doesn’t make much sense to have the controllers responsible for handling routes AND communication between view pages and the database. This separation allows controllers to be much cleaner and act more like normal Ruby classes. Add that separation along with being able to assign several routes using “resources” and being able to call routes with “path”, I’m pretty darn happy with how routes work in Rails.&lt;/p&gt;</content><author><name></name></author><summary type="html">They're like Sinatra routes, but just different enough to be confusing.</summary></entry></feed>
+&lt;p&gt;You can also get access to this model method by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for :classname&lt;/code&gt; to your model. However you won’t be able to customize this method, so if you need to add any sort of customization, you need to define the method manually and skip the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for&lt;/code&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I had to take a step back in order to jump forward into this complex form.</summary></entry></feed>

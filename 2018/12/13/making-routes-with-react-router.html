@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=2e2e182490193c27b79f54b59e3d6e370f0a62f1">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Making Routes With React Router | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Making Routes With React Router" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My single page application is great, but I want more!" />
+<meta property="og:description" content="My single page application is great, but I want more!" />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-13T00:00:00-07:00" />
+<script type="application/ld+json">
+{"url":"/2018/12/13/making-routes-with-react-router.html","dateModified":"2018-12-13T00:00:00-07:00","datePublished":"2018-12-13T00:00:00-07:00","headline":"Making Routes With React Router","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/12/13/making-routes-with-react-router.html"},"description":"My single page application is great, but I want more!","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquistjykllfiles/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Making Routes With React Router</h1>
+
+<p>
+  13 Dec 2018
+  
+  
+</p>
+
+<h3>My single page application is great, but I want more!</h3>
+
+<p>We all love using React and Redux, but what happens when we get tired of our URL constantly sitting at “rockin-website.com/index” regardless of what sort of content we’re viewing? Enter React Router!</p>
+
+<p><em>I feel like React Routes can get a little overwhelming when adding it to a potentially already complex application, so I’m going to break this down into at least two articles, this first article being focused on a quick intro to get some basic functionality across</em></p>
+
+<p>We’ll start by importing a few basic things into our file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React from 'react'
+import Provider from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+
+</code></pre></div></div>
+
+<p>Provider gives us access to the Redux store, BrowserRouter (which we’ll be using as Router) will be the parent to all of our other routes and will hold a history object, Switch allows us to choose between several routes, and Route is what we’ll use to decide what component we want to render when we type in a certain URL.</p>
+
+<p>Here is an example of using all of those can look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React from 'react'
+import Provider from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import AllLists from './AllLists'
+import CatList from './CatList'
+import FoodList from './FoodList'
+
+class MyListRouter extends React.Component {
+
+  render() {
+    return (
+      &lt;Router&gt;
+        &lt;Switch&gt;
+          &lt;Route exact path='/' component={ AllLists }
+          &lt;Route path='/catlist' component={ CatList }
+          &lt;Route path='/foodlist' component={ FoodList }
+        &lt;/Switch&gt;
+      &lt;/BrowserRouter&gt;
+      )
+  }
+}
+</code></pre></div></div>
+<p>In the above code we use our Router (which is the BrowserRouter) to wrap the our Switch and also each Route. In the the path prop of each Route we specify the URL that we are looking for, and in the component prop, we specify which component we want to render, when the URL matches that path prop.</p>
+
+<p>In my next blog we’ll cover nested routes and using the history to redirect the user after certain actions.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquistjykllfiles">coryjbergquistjykllfiles</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

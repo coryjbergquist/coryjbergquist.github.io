@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-01T17:11:02-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Redux Updating Store With Actions</title><link href="/2018/12/01/react-redux-updating-store-with-actions.html" rel="alternate" type="text/html" title="React Redux Updating Store With Actions" /><published>2018-12-01T00:00:00-07:00</published><updated>2018-12-01T00:00:00-07:00</updated><id>/2018/12/01/react-redux-updating-store-with-actions</id><content type="html" xml:base="/2018/12/01/react-redux-updating-store-with-actions.html">&lt;h3&gt;There can be quite a bit happening during an update of your Redux store, here's a quick example to help make sense of the major steps.&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-13T11:29:21-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React Container And Presentational Components</title><link href="/2018/12/06/react-container-and-presentational-components.html" rel="alternate" type="text/html" title="React Container And Presentational Components" /><published>2018-12-06T00:00:00-07:00</published><updated>2018-12-06T00:00:00-07:00</updated><id>/2018/12/06/react-container-and-presentational-components</id><content type="html" xml:base="/2018/12/06/react-container-and-presentational-components.html">&lt;h3&gt;If we're going to follow best coding practices, then we better separate our concerns.&lt;/h3&gt;
+
+&lt;p&gt;When working with an MVC (model view controller) pattern, it’s pretty common to use a restaurant example. The chef is the model, they get the food (data), the waiter is the controller, they take orders (user input), and the table is the view, it holds the food for you to see. Using this architecture our code has a separation of concerns so if we need to change one element, it has much less of a chance to ruin the other parts of our project. Changing the view shouldn’t spring up any problems with your model or controller.&lt;/p&gt;
+
+&lt;h3&gt;When using React/Redux&lt;/h3&gt;
+&lt;p&gt;While setting up components, keeping this restaurant analogy in mind can be pretty beneficial. Our Redux store will be our chef (he has all the food), our container component can be considered the waiter who gets information from the store, and our presentational component (preferably a stateless functional component), not surprisingly, can be considered the restaurant table that presents the food.&lt;/p&gt;
+
+&lt;p&gt;Keeping the container component, which is responsible for getting the data (usually by utilizing Redux’s &lt;code class=&quot;highlighter-rouge&quot;&gt;connect&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mapStateToProps&lt;/code&gt;), separate from the presentational component will keep our code much cleaner and easier to debug when problems arise.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from 'react';
+import Sound from './Sound'
+import { connect } from 'react-redux';
+
+class SoundsList extends React.Component {
+
+  //adding a Sounds component for each sound in props
+  renderSounds = this.props.stateSounds.sounds.map((sound) =&amp;gt;
+  &amp;lt;div key ={sound.id}&amp;gt;
+    &amp;lt;Sound sound={sound} /&amp;gt;
+    &amp;lt;/div&amp;gt;
+  )
+
+  render(){
+    return (
+      &amp;lt;ul&amp;gt;
+
+        {this.renderSounds}
+
+      &amp;lt;/ul&amp;gt;
+    )
+  }
+}
+
+const mapStateToProps = state =&amp;gt; ({stateSounds: state.sounds})
+
+export default connect(mapStateToProps)(SoundsList);
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;In the above code, we have a SoundsList component that is using mapStateToProps to get a list of sounds from the Redux store, then uses renderSounds and map to render the Sound component (which is a presentational component) for each sound that we get from the store.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Seeing the code above, we get an idea what will happen in our web app, we don’t even need to know exactly what is happening in the Sound component, all we need to do is pass it the correct props and we’re good to go. If either component fails, we’ll have a much easier time figuring out where the error is, compared to if we had both components squashed together.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.sterlingsheehy.com/images/2011/12/ugly-wordpress-coding-habbits.jpg&quot; alt=&quot;image-title-here&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Nobody wants code that looks like this!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Separation of concerns is very common in development, however, I’m sure plenty of us have been guilty of throwing everything in one giant file when starting a new project. Keeping these simple patterns in mind when laying out the basic structure of an application can save us a lot of future headaches!&lt;/p&gt;</content><author><name></name></author><summary type="html">If we're going to follow best coding practices, then we better separate our concerns.</summary></entry><entry><title type="html">React Redux Updating Store With Actions</title><link href="/2018/12/01/react-redux-updating-store-with-actions.html" rel="alternate" type="text/html" title="React Redux Updating Store With Actions" /><published>2018-12-01T00:00:00-07:00</published><updated>2018-12-01T00:00:00-07:00</updated><id>/2018/12/01/react-redux-updating-store-with-actions</id><content type="html" xml:base="/2018/12/01/react-redux-updating-store-with-actions.html">&lt;h3&gt;There can be quite a bit happening during an update of your Redux store, here's a quick example to help make sense of the major steps.&lt;/h3&gt;
 
 &lt;p&gt;I’m going to keep this article specific to updating the Redux store, so to begin, we’ll assume that you have some knowledge of Redux, React, JavaScript, and that you have these things already up and running. Ok, let’s get to it!&lt;/p&gt;
 
@@ -288,18 +337,4 @@ In the picture above:&lt;/p&gt;
   &lt;p&gt;&lt;img src=&quot;https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/01/b9nrm1-2-1200x800.jpg&quot; alt=&quot;routes picture&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;After spending a bit more time with Rails, I have gotten a lot more used to working with routes, and have come to really appreciate the new setup. The separation of tasks makes the most sense right off the bat. I’ve been told over and over that it’s good practice to separate functionality to keep each file or class as focused as possible. With that in mind, it doesn’t make much sense to have the controllers responsible for handling routes AND communication between view pages and the database. This separation allows controllers to be much cleaner and act more like normal Ruby classes. Add that separation along with being able to assign several routes using “resources” and being able to call routes with “path”, I’m pretty darn happy with how routes work in Rails.&lt;/p&gt;</content><author><name></name></author><summary type="html">They're like Sinatra routes, but just different enough to be confusing.</summary></entry><entry><title type="html">Sinatra Sound Organizer</title><link href="/2018/07/19/sinatra-sound-organizer.html" rel="alternate" type="text/html" title="Sinatra Sound Organizer" /><published>2018-07-19T00:00:00-07:00</published><updated>2018-07-19T00:00:00-07:00</updated><id>/2018/07/19/sinatra-sound-organizer</id><content type="html" xml:base="/2018/07/19/sinatra-sound-organizer.html">&lt;h3&gt; The path to learning Sinatra sure has a lot of routes you can take! &lt;/h3&gt;
-
-&lt;p&gt;After gaining a lot of confidence in my Ruby skills, dipping my feet into using HTML and CSS, and feeling pretty darn comfortable with ActiveRecord, I finally felt like I was able to put everything together with Sinatra. I finally felt like I could build something real.&lt;/p&gt;
-
-&lt;p&gt;Up until this point I felt as though I was only building small parts of an application, maybe a database here, or a static HTML web page over there. But nothing that fully worked together to form a full working application that you could see in a browser and interact with. Well that time has ended! Understanding how Sinatra works has given me new inspiration while thinking about a project as a whole. I feel like I have the ability to create more intelligently by keeping in mind how each line of code I write will affect the other parts of my program, perhaps lines that I haven’t even written yet. It’s a very liberating feeling, being able to write code with a solid grasp on exactly how that code will function and how it will look in a browser.&lt;/p&gt;
-
-&lt;p&gt;My Sinatra Sound Organizer is meant to be a program that allows users to keep track of small sounds or song ideas that they may want to revisit at a later time. Maybe they heard a really cool sounding percussive element and were able to record it, and they just want to make sure they can come back to it later. Or maybe they came up with a great chord progression for a song and don’t want to forget it. This program will allow people to create a user, and then save their sound clips (with name, description and file). Users can view all of their sounds on their home page, or see each individual sound and description, as well as edit, delete, and add new sounds.&lt;/p&gt;
-
-&lt;p&gt;Starting on this particular project was actually fairly easy. After familiarizing myself with a few basic Sinatra layouts, I was able to create the framework of my application (making sure to include a README, gem file, environment etc.) and begin writing the code for my MVC structure. We have had a lot of practice building correct routes for creating objects, saving them in the database, and returning them back to the view page, which made making my own routes a breeze.&lt;/p&gt;
-
-&lt;p&gt;I ran into a little bit of a hiccup when I had a bit of an overload of information on my index view page. My idea was to have the main index page contain either the login/sign up forms or the users main list of sounds, depending on if the current user was logged in or not. So as soon as you navigated to the main page you could potentially immediately see the sounds that you have uploaded. However, this proved to be a little messy looking, and I didn’t want to start overloading my view pages when it wasn’t really necessary. So I settled on creating a separate login/sign up page, and inside my controller route for “/” I used my “is_logged_in?” helper method to either redirect the user to their sounds page, or directly render the login/sign up page. This way, my views pages stayed a bit more clean, and I still had the function of being able to see my sounds simply by going to the root url (as long as I was already logged in).&lt;/p&gt;
-
-&lt;p&gt;Another issue I had was finding out the correct search path for finding uploaded files. I could see that my browser was sending me a file name and a temp file, but I wasn’t aware how to actually get the newly uploaded file onto my sound’s view page. I found that I needed to create the file in the “public” directory so that it could be found by name when it was called in my views page. I was happy to find that I was able to submit both the file and text in my form by using enctype=”multipart/form-data”.&lt;/p&gt;
-
-&lt;p&gt;I spent just a bit of time adding bootstrap to my application to clean up the view pages a little (I plan on spending more time getting the views to look better), but it was nice to focus mostly on creating a functional web application, and I’m very happy with the result.&lt;/p&gt;</content><author><name></name></author><summary type="html">The path to learning Sinatra sure has a lot of routes you can take!</summary></entry></feed>
+&lt;p&gt;After spending a bit more time with Rails, I have gotten a lot more used to working with routes, and have come to really appreciate the new setup. The separation of tasks makes the most sense right off the bat. I’ve been told over and over that it’s good practice to separate functionality to keep each file or class as focused as possible. With that in mind, it doesn’t make much sense to have the controllers responsible for handling routes AND communication between view pages and the database. This separation allows controllers to be much cleaner and act more like normal Ruby classes. Add that separation along with being able to assign several routes using “resources” and being able to call routes with “path”, I’m pretty darn happy with how routes work in Rails.&lt;/p&gt;</content><author><name></name></author><summary type="html">They're like Sinatra routes, but just different enough to be confusing.</summary></entry></feed>

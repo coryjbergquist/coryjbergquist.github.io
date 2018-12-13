@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=6e5754415c6546176e4b3c7de2ebdb49a849e4a6">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>React Container And Presentational Components | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="React Container And Presentational Components" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If we&#39;re going to follow best coding practices, then we better separate our concerns." />
+<meta property="og:description" content="If we&#39;re going to follow best coding practices, then we better separate our concerns." />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-06T00:00:00-07:00" />
+<script type="application/ld+json">
+{"url":"/2018/12/06/react-container-and-presentational-components.html","dateModified":"2018-12-06T00:00:00-07:00","datePublished":"2018-12-06T00:00:00-07:00","headline":"React Container And Presentational Components","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/12/06/react-container-and-presentational-components.html"},"description":"If we&#39;re going to follow best coding practices, then we better separate our concerns.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquist/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>React Container And Presentational Components</h1>
+
+<p>
+  06 Dec 2018
+  
+  
+</p>
+
+<h3>If we're going to follow best coding practices, then we better separate our concerns.</h3>
+
+<p>When working with an MVC (model view controller) pattern, it’s pretty common to use a restaurant example. The chef is the model, they get the food (data), the waiter is the controller, they take orders (user input), and the table is the view, it holds the food for you to see. Using this architecture our code has a separation of concerns so if we need to change one element, it has much less of a chance to ruin the other parts of our project. Changing the view shouldn’t spring up any problems with your model or controller.</p>
+
+<h3>When using React/Redux</h3>
+<p>While setting up components, keeping this restaurant analogy in mind can be pretty beneficial. Our Redux store will be our chef (he has all the food), our container component can be considered the waiter who gets information from the store, and our presentational component (preferably a stateless functional component), not surprisingly, can be considered the restaurant table that presents the food.</p>
+
+<p>Keeping the container component, which is responsible for getting the data (usually by utilizing Redux’s <code class="highlighter-rouge">connect</code> and <code class="highlighter-rouge">mapStateToProps</code>), separate from the presentational component will keep our code much cleaner and easier to debug when problems arise.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React from 'react';
+import Sound from './Sound'
+import { connect } from 'react-redux';
+
+class SoundsList extends React.Component {
+
+  //adding a Sounds component for each sound in props
+  renderSounds = this.props.stateSounds.sounds.map((sound) =&gt;
+  &lt;div key ={sound.id}&gt;
+    &lt;Sound sound={sound} /&gt;
+    &lt;/div&gt;
+  )
+
+  render(){
+    return (
+      &lt;ul&gt;
+
+        {this.renderSounds}
+
+      &lt;/ul&gt;
+    )
+  }
+}
+
+const mapStateToProps = state =&gt; ({stateSounds: state.sounds})
+
+export default connect(mapStateToProps)(SoundsList);
+
+</code></pre></div></div>
+<blockquote>
+  <p><em>In the above code, we have a SoundsList component that is using mapStateToProps to get a list of sounds from the Redux store, then uses renderSounds and map to render the Sound component (which is a presentational component) for each sound that we get from the store.</em></p>
+</blockquote>
+
+<p>Seeing the code above, we get an idea what will happen in our web app, we don’t even need to know exactly what is happening in the Sound component, all we need to do is pass it the correct props and we’re good to go. If either component fails, we’ll have a much easier time figuring out where the error is, compared to if we had both components squashed together.</p>
+
+<p><img src="https://www.sterlingsheehy.com/images/2011/12/ugly-wordpress-coding-habbits.jpg" alt="image-title-here" class="img-responsive" /></p>
+<blockquote>
+  <p><em>Nobody wants code that looks like this!</em></p>
+</blockquote>
+
+<p>Separation of concerns is very common in development, however, I’m sure plenty of us have been guilty of throwing everything in one giant file when starting a new project. Keeping these simple patterns in mind when laying out the basic structure of an application can save us a lot of future headaches!</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquist">coryjbergquist</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

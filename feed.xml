@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-13T15:33:36-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Making Routes With React Router</title><link href="/2018/12/13/making-routes-with-react-router.html" rel="alternate" type="text/html" title="Making Routes With React Router" /><published>2018-12-13T00:00:00-07:00</published><updated>2018-12-13T00:00:00-07:00</updated><id>/2018/12/13/making-routes-with-react-router</id><content type="html" xml:base="/2018/12/13/making-routes-with-react-router.html">&lt;h3&gt;My single page application is great, but I want more!&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-01-22T12:55:56-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Creating For Yourself</title><link href="/2019/01/19/creating-for-yourself.html" rel="alternate" type="text/html" title="Creating For Yourself" /><published>2019-01-19T00:00:00-07:00</published><updated>2019-01-19T00:00:00-07:00</updated><id>/2019/01/19/creating-for-yourself</id><content type="html" xml:base="/2019/01/19/creating-for-yourself.html">&lt;h3&gt;Keep Your Personal Projects Going!&lt;/h3&gt;
+
+&lt;p&gt;Before I follow up on my previous article about making React Routes, I’m going to take a quick sidestep and talk about building for the sake of your own enjoyment.&lt;/p&gt;
+
+&lt;p&gt;If you have willingly spent more than five minutes teaching yourself some sort of coding language, you probably have a sincere passion for creating with code. As a new developer, it’s easy to get swept up into trying to find a job, making sure you have the skills to add value to a company and making sure that you present yourself in a professional manner. But don’t forget to take a step back and code for yourself every now and then.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn.pixabay.com/photo/2016/06/09/20/38/woman-1446557_1280.jpg&quot; alt=&quot;ideas&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Like this idea swamped developer in the picture above, there’s probably so many ideas floating around in your head, pick one and run with it, even if it seems silly!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;a-silly-idea-might-be-just-what-you-need-to-keep-pushing-yourself-as-a-developer&quot;&gt;A silly idea might be just what you need to keep pushing yourself as a developer.&lt;/h4&gt;
+
+&lt;p&gt;Even if it’s just laying out a basic &lt;code class=&quot;highlighter-rouge&quot;&gt;NOTES&lt;/code&gt; file in your directory that outlines an idea that you think might be fun or cool. This can be a huge breath of fresh air and renew your drive to continue learning throughout your career in code.&lt;/p&gt;
+
+&lt;p&gt;For me, I decided it would be fun to create a web application that randomly generated a user’s superhero for the day. Similar to how people read their daily horoscopes, this would be a light hearted “give yourself this superhero power boost to help your through the day” type of app.&lt;/p&gt;
+
+&lt;h3 id=&quot;developing-your-own-work-helps-you-dig-deeper-into-any-and-all-problems&quot;&gt;Developing your own work helps you dig deeper into any and all problems.&lt;/h3&gt;
+
+&lt;p&gt;When I first began writing code for this project, I quickly realized that in my previous applications I may have gone too quickly into using Redux without fully appreciating it. I love working with React and it was great to fully work out my idea until I reached a point where it really made sense to move all of my &lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt; into one place with the Redux &lt;code class=&quot;highlighter-rouge&quot;&gt;store&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The act alone of creating a brand new application is great practice for keeping your knowledge fresh. I definitely had to go back and look up a few JavaScript best practices.&lt;/p&gt;
+
+&lt;h3 id=&quot;something-i-can-always-come-back-to&quot;&gt;Something I can always come back to.&lt;/h3&gt;
+
+&lt;p&gt;Even if I am unable to finish this application right away, it’s great to know that I have something fun that I can open up and make a few git commits to whenever I’m up for a challenge.&lt;/p&gt;
+
+&lt;p&gt;After about a year of pushing myself to the max and learning everything I possibly can, the simple task of typing &lt;code class=&quot;highlighter-rouge&quot;&gt;npx create-react-app random-superhero&lt;/code&gt; and starting to build something just for fun has really given me a jumpstart in my motivation to keep learning, and keep the curiousity alive.&lt;/p&gt;
+
+&lt;h3 id=&quot;keep-coding-fun&quot;&gt;Keep coding fun!&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg&quot; alt=&quot;cofetti&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Blow some bubbles, throw some cofetti, make some noise and keep coding fun!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">Keep Your Personal Projects Going!</summary></entry><entry><title type="html">Making Routes With React Router</title><link href="/2018/12/13/making-routes-with-react-router.html" rel="alternate" type="text/html" title="Making Routes With React Router" /><published>2018-12-13T00:00:00-07:00</published><updated>2018-12-13T00:00:00-07:00</updated><id>/2018/12/13/making-routes-with-react-router</id><content type="html" xml:base="/2018/12/13/making-routes-with-react-router.html">&lt;h3&gt;My single page application is great, but I want more!&lt;/h3&gt;
 
 &lt;p&gt;We all love using React and Redux, but what happens when we get tired of our URL constantly sitting at “rockin-website.com/index” regardless of what sort of content we’re viewing? Enter React Router!&lt;/p&gt;
 
@@ -325,50 +359,4 @@ x
 
 &lt;p&gt;I ran into a small issue when I basically created my entire application without adding nested routes as I went along. This got me confused a little bit as I created new routes in my config/routes.rb file and got a little lost in terms of which controllers my routes were sending the user to. I solved this by creating a new controller specifically to handle nested routes that could see all the reviews for a particular movie, and create reviews for that movie (movies/1/reviews/new). For the most part, I had this controller render pages from views/reviews, but having the control itself separate from my normal reviews controller helped me keep organized.&lt;/p&gt;
 
-&lt;p&gt;In the end, this was a very enjoyable project that gave me a lesson I never thought I’d need. So I say this to anyone reading, and especially to myself: Get your main functionality working before you go digging through 500 stack overflow posts!&lt;/p&gt;</content><author><name></name></author><summary type="html">Always always always...ALWAYS get your main functionality up and running before anything else.</summary></entry><entry><title type="html">Nested Forms In Rails</title><link href="/2018/08/23/nested-forms-in-rails.html" rel="alternate" type="text/html" title="Nested Forms In Rails" /><published>2018-08-23T00:00:00-07:00</published><updated>2018-08-23T00:00:00-07:00</updated><id>/2018/08/23/nested-forms-in-rails</id><content type="html" xml:base="/2018/08/23/nested-forms-in-rails.html">&lt;h3&gt; I had to take a step back in order to jump forward into this complex form. &lt;/h3&gt;
-
-&lt;p&gt;I had a hard time understanding exactly what was happening while using the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method, so I’ll try to break it down as best as I can. Let’s say I’m building a form that will add a category to a post. I’ll be using the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method in the posts/edit.html.erb file to create a text field for users to enter a new category for a post.&lt;/p&gt;
-
-&lt;h4&gt; Let's start by looking at our `fields_for` method that is inside of a `form_for` method that has an object of `@post`: &lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/54576835f40f502cc23d340c34d2cc42/tumblr_pcy5820RjU1r0ch5ko1_1280.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the picture above:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:categories&lt;/code&gt; is the class instance that we’ll be creating, and it should already have a relationship to the Post class (a Post has_many :categories). This category will automatically get associated with this particular instance of Post through mass assignment.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@post.categories.build&lt;/code&gt; gives us our Post class object that we want to create a category for (through &lt;code class=&quot;highlighter-rouge&quot;&gt;@post&lt;/code&gt;) and calls the build method to make a new instance of our Category class, using the block that comes after, which creates a &lt;code class=&quot;highlighter-rouge&quot;&gt;text_field&lt;/code&gt; for the &lt;code class=&quot;highlighter-rouge&quot;&gt;:name&lt;/code&gt; key. This is basically creating an empty instance of the Category class, which will be filled once the user adds a name into the newly generated text field.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt; Using the `fields_for` method in your form gives you this HTML when you visit the page in a browser: &lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/a99e8fbde52396de153835b3b205da08/tumblr_pcy5820RjU1r0ch5ko2_1280.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the picture above:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;name=&lt;/code&gt; is what will be passed to your controller as a hash, the first part of your name must match up to the params your controller is looking for, and the setter method that you defined in your model. It must include “classname_attributes”. So if you’re trying to create a Category for an instance of a Post, then it must be “&lt;code class=&quot;highlighter-rouge&quot;&gt;categories_attributes&lt;/code&gt;”.&lt;/li&gt;
-  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[0][name]&lt;/code&gt; that comes directly after &lt;code class=&quot;highlighter-rouge&quot;&gt;categories_attributes&lt;/code&gt; is giving you a numbered array, with a key of &lt;code class=&quot;highlighter-rouge&quot;&gt;:name&lt;/code&gt; (which you get from &lt;code class=&quot;highlighter-rouge&quot;&gt;[name]&lt;/code&gt;).&lt;/li&gt;
-  &lt;li&gt;In this case we have &lt;code class=&quot;highlighter-rouge&quot;&gt;post[categories_attributes][0][name]&lt;/code&gt; because we want to add a category inside of the Post class, so the hash mush start with “post”.&lt;/li&gt;
-  &lt;li&gt;All of these automatically come from using the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt; The HTML looks for this method inside of our Post model (as long as our controller is setup to accept the correct key =&amp;gt; value pairs in our params hash): &lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/18fe0a721c92998e6179fbb542f13db2/tumblr_pcy5820RjU1r0ch5ko3_1280.png&quot; alt=&quot;&quot; /&gt;
-In the picture above:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;We are first searching to see if the category already exists, if it does not, we will create one. And then push that category into self.categories (self is an instance of the Post class).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt; Here is our post_params method that is in our PostsController: &lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://78.media.tumblr.com/3e23b45219f2d33ae7426ab0071779d5/tumblr_pcy5820RjU1r0ch5ko4_r1_1280.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the picture above:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;You can see that we are permitting the keys that we require, including &lt;code class=&quot;highlighter-rouge&quot;&gt;categories_attributes [:name]&lt;/code&gt;, all of which are inside of the &lt;code class=&quot;highlighter-rouge&quot;&gt;params[:post]&lt;/code&gt; hash.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt; Main thoughts: &lt;/h4&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;fields_for&lt;/code&gt; method automatically looks for the model method &lt;code class=&quot;highlighter-rouge&quot;&gt;classname_attributes=&lt;/code&gt; in the class that you are working with (in this case, the Post class that we’re getting from @post). The “classname” will be whatever class you want to associate to the main object (which is currently an instance of Post). In this case we were making a new category for a Post, so we’re adding &lt;code class=&quot;highlighter-rouge&quot;&gt;def categories_attributes=&lt;/code&gt; to our Post class, which will take an argument of whatever our params hash passes in.&lt;/p&gt;
-
-&lt;p&gt;You can also get access to this model method by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for :classname&lt;/code&gt; to your model. However you won’t be able to customize this method, so if you need to add any sort of customization, you need to define the method manually and skip the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;accepts_nested_attributes_for&lt;/code&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I had to take a step back in order to jump forward into this complex form.</summary></entry></feed>
+&lt;p&gt;In the end, this was a very enjoyable project that gave me a lesson I never thought I’d need. So I say this to anyone reading, and especially to myself: Get your main functionality working before you go digging through 500 stack overflow posts!&lt;/p&gt;</content><author><name></name></author><summary type="html">Always always always...ALWAYS get your main functionality up and running before anything else.</summary></entry></feed>

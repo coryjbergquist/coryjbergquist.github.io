@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=2e2e182490193c27b79f54b59e3d6e370f0a62f1">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>React And Set State | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="React And Set State" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What else can setState() offer us?" />
+<meta property="og:description" content="What else can setState() offer us?" />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-24T00:00:00-07:00" />
+<script type="application/ld+json">
+{"datePublished":"2019-01-24T00:00:00-07:00","dateModified":"2019-01-24T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/01/24/React-and-set-State.html"},"url":"/2019/01/24/React-and-set-State.html","description":"What else can setState() offer us?","headline":"React And Set State","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquistjykllfiles/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>React And Set State</h1>
+
+<p>
+  24 Jan 2019
+  
+  
+</p>
+
+<h3>What else can setState() offer us?</h3>
+
+<p>If you’ve done your reading, you know that you shouldn’t directly mutate your state when using React.</p>
+
+<p><img src="https://miro.medium.com/max/814/1*fUJEYMKcmdHkkm6St7Z4Dg.jpeg" alt="LOTRState" class="img-responsive" /></p>
+<blockquote>
+  <p><em>I know everyone uses this image, but it’s funny and it’s a good reminder, so I’m going to use it too!</em></p>
+</blockquote>
+
+<p>So we all use setState, we all love setState, setState is GREAT! But we want to flex our brain muscles, so what else can we do with this wonderful method that is built right into the React.Component API?</p>
+
+<p>First off, <code class="highlighter-rouge">setState()</code> is not always synchronous. This can lead to some issues when we’re trying to call a function directly after we change the state of our component. Let’s say you want to <code class="highlighter-rouge">console.log(this.state)</code> directly after you update your component with <code class="highlighter-rouge">setState()</code>. Because <code class="highlighter-rouge">setState()</code> is called when it is best for performance, you might end up calling <code class="highlighter-rouge">console.log()</code> before <code class="highlighter-rouge">setState()</code> and end up logging your old state instead of your new state.</p>
+
+<h4 id="why-do-you-do-this-to-me">Why do you do this to me?!?!</h4>
+
+<p>Luckily <code class="highlighter-rouge">setState()</code> comes with an optional callback function:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this.setState(
+  {
+    names: ["bob", "jerry", "steven"]
+  },
+  function () {console.log("this will happen after setState() is completed")}
+  )
+</code></pre></div></div>
+
+<blockquote>
+  <p><em>This way, you’ll be able to use your new state directly after <code class="highlighter-rouge">setState()</code> is completed. Wooo!</em></p>
+</blockquote>
+
+<h4 id="ok-what-else-you-got">Ok what else you got?</h4>
+
+<p>What if we need to update state based on what’s already in the current state? Ex: adding to a list of names. So let’s say we have a list of names: <code class="highlighter-rouge">{names: ["bob", "jerry", "steven"]}</code> and we want to add a name to that list. We’re not supposed to mutate our state directly so we can’t just <code class="highlighter-rouge">push()</code> into the <code class="highlighter-rouge">names</code> array. Instead we’ll use a function as the first argument in <code class="highlighter-rouge">setState()</code>. The function can take <code class="highlighter-rouge">state</code> which will be a reference to the current component state, and <code class="highlighter-rouge">props</code> which function like any other props. For now we’re just going to pass in <code class="highlighter-rouge">state</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this.setState((state) =&gt; {
+  names: [...state, "Mr. New Name"]
+  },
+  function () {console.log("we have now added Mr. New Name")}
+  )
+</code></pre></div></div>
+
+<p>In the above code, we’re passing in the current state, and then using the spread operator <code class="highlighter-rouge">...state</code> to add the current elements of the array, along with our “Mr. New Name” into a fresh array.</p>
+
+<p>Alright! We’ve successfully updated our state without mutating any immutable objects, and hopefully we have a better understanding of what setState is capable of! As a side note, the React docs explain that instead of using the optional callback function in <code class="highlighter-rouge">setState()</code> we should instead use <code class="highlighter-rouge">componentDidUpdate()</code> which will fire off after a component updates (such as after <code class="highlighter-rouge">setState()</code> is completed). So keep that in mind when you’re pushing <code class="highlighter-rouge">setState()</code> to its maximum capacity.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquistjykllfiles">coryjbergquistjykllfiles</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-01-22T12:55:56-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Creating For Yourself</title><link href="/2019/01/19/creating-for-yourself.html" rel="alternate" type="text/html" title="Creating For Yourself" /><published>2019-01-19T00:00:00-07:00</published><updated>2019-01-19T00:00:00-07:00</updated><id>/2019/01/19/creating-for-yourself</id><content type="html" xml:base="/2019/01/19/creating-for-yourself.html">&lt;h3&gt;Keep Your Personal Projects Going!&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-01-25T12:04:57-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React And Set State</title><link href="/2019/01/24/React-and-set-State.html" rel="alternate" type="text/html" title="React And Set State" /><published>2019-01-24T00:00:00-07:00</published><updated>2019-01-24T00:00:00-07:00</updated><id>/2019/01/24/React-and-set-State</id><content type="html" xml:base="/2019/01/24/React-and-set-State.html">&lt;h3&gt;What else can setState() offer us?&lt;/h3&gt;
+
+&lt;p&gt;If you’ve done your reading, you know that you shouldn’t directly mutate your state when using React.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/814/1*fUJEYMKcmdHkkm6St7Z4Dg.jpeg&quot; alt=&quot;LOTRState&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;I know everyone uses this image, but it’s funny and it’s a good reminder, so I’m going to use it too!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So we all use setState, we all love setState, setState is GREAT! But we want to flex our brain muscles, so what else can we do with this wonderful method that is built right into the React.Component API?&lt;/p&gt;
+
+&lt;p&gt;First off, &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; is not always synchronous. This can lead to some issues when we’re trying to call a function directly after we change the state of our component. Let’s say you want to &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log(this.state)&lt;/code&gt; directly after you update your component with &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt;. Because &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; is called when it is best for performance, you might end up calling &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; before &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; and end up logging your old state instead of your new state.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-do-you-do-this-to-me&quot;&gt;Why do you do this to me?!?!&lt;/h4&gt;
+
+&lt;p&gt;Luckily &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; comes with an optional callback function:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this.setState(
+  {
+    names: [&quot;bob&quot;, &quot;jerry&quot;, &quot;steven&quot;]
+  },
+  function () {console.log(&quot;this will happen after setState() is completed&quot;)}
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;This way, you’ll be able to use your new state directly after &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; is completed. Wooo!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;ok-what-else-you-got&quot;&gt;Ok what else you got?&lt;/h4&gt;
+
+&lt;p&gt;What if we need to update state based on what’s already in the current state? Ex: adding to a list of names. So let’s say we have a list of names: &lt;code class=&quot;highlighter-rouge&quot;&gt;{names: [&quot;bob&quot;, &quot;jerry&quot;, &quot;steven&quot;]}&lt;/code&gt; and we want to add a name to that list. We’re not supposed to mutate our state directly so we can’t just &lt;code class=&quot;highlighter-rouge&quot;&gt;push()&lt;/code&gt; into the &lt;code class=&quot;highlighter-rouge&quot;&gt;names&lt;/code&gt; array. Instead we’ll use a function as the first argument in &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt;. The function can take &lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt; which will be a reference to the current component state, and &lt;code class=&quot;highlighter-rouge&quot;&gt;props&lt;/code&gt; which function like any other props. For now we’re just going to pass in &lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this.setState((state) =&amp;gt; {
+  names: [...state, &quot;Mr. New Name&quot;]
+  },
+  function () {console.log(&quot;we have now added Mr. New Name&quot;)}
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the above code, we’re passing in the current state, and then using the spread operator &lt;code class=&quot;highlighter-rouge&quot;&gt;...state&lt;/code&gt; to add the current elements of the array, along with our “Mr. New Name” into a fresh array.&lt;/p&gt;
+
+&lt;p&gt;Alright! We’ve successfully updated our state without mutating any immutable objects, and hopefully we have a better understanding of what setState is capable of! As a side note, the React docs explain that instead of using the optional callback function in &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; we should instead use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentDidUpdate()&lt;/code&gt; which will fire off after a component updates (such as after &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; is completed). So keep that in mind when you’re pushing &lt;code class=&quot;highlighter-rouge&quot;&gt;setState()&lt;/code&gt; to its maximum capacity.&lt;/p&gt;</content><author><name></name></author><summary type="html">What else can setState() offer us?</summary></entry><entry><title type="html">Creating For Yourself</title><link href="/2019/01/19/creating-for-yourself.html" rel="alternate" type="text/html" title="Creating For Yourself" /><published>2019-01-19T00:00:00-07:00</published><updated>2019-01-19T00:00:00-07:00</updated><id>/2019/01/19/creating-for-yourself</id><content type="html" xml:base="/2019/01/19/creating-for-yourself.html">&lt;h3&gt;Keep Your Personal Projects Going!&lt;/h3&gt;
 
 &lt;p&gt;Before I follow up on my previous article about making React Routes, I’m going to take a quick sidestep and talk about building for the sake of your own enjoyment.&lt;/p&gt;
 
@@ -347,16 +389,4 @@ x
 
 &lt;p&gt;Null is also different in JavaScript. Null is used when we intentionally want to leave the value of an object blank. Undefined means a value has not been assigned yet. And symbols can create unique values for identifying object properties.&lt;/p&gt;
 
-&lt;p&gt;I’m still learning a lot about JavaScript, and I’m excited to get a deeper understand of all that JavaScript has to offer!&lt;/p&gt;</content><author><name></name></author><summary type="html">Have one coding language under your belt? On to the next!</summary></entry><entry><title type="html">Rails Movie Reviewer</title><link href="/2018/09/11/rails-movie-reviewer.html" rel="alternate" type="text/html" title="Rails Movie Reviewer" /><published>2018-09-11T00:00:00-07:00</published><updated>2018-09-11T00:00:00-07:00</updated><id>/2018/09/11/rails-movie-reviewer</id><content type="html" xml:base="/2018/09/11/rails-movie-reviewer.html">&lt;h3&gt; Always always always...ALWAYS get your main functionality up and running before anything else. &lt;/h3&gt;
-
-&lt;p&gt;I usually try to start with a little catchy pun when writing a blog. Not today, because I fell victim to something that I knew was a bad idea and I want this to be a reminder for myself. I got distracted by adding functions that I didn’t fully understand, before I got the main parts of my application up and running.&lt;/p&gt;
-
-&lt;p&gt;This project is made to look at and create reviews from a select list of movies. Users can create a new user, and add new reviews that have a title, content and rating (1-5). When I started this project, everything went smooth enough. I created my initial models, and some basic routes. But when it came time to make my first form, I completely lost sight of my main idea and lost a lot of time. I spent about 10-12 hours researching the best way to first parse through a giant list of movies, and then add those movies to an autocomplete search function so that a user could easily select a movie and create a review without having to search through a giant list of movies.&lt;/p&gt;
-
-&lt;p&gt;How did I spend so much time on what should have been a relatively easy idea? It’s honestly still a bit of mystery to me. What I should have done, is take a second and ask my fellow classmates for pointers, but I got lost in an endless string of articles and stackoverflow posts. I think it’s important to get a deep understanding of the things that interest you, but I definitely should have kept in mind that it might not be worth it to sacrifice all of this time before I had completed the main functionality of my application.&lt;/p&gt;
-
-&lt;p&gt;After I realised my mistake, I kicked it into high gear and finished knocking out forms for users to create and edit reviews. As well as adding scope methods that would allow user to see which movies had the highest average rating.&lt;/p&gt;
-
-&lt;p&gt;I ran into a small issue when I basically created my entire application without adding nested routes as I went along. This got me confused a little bit as I created new routes in my config/routes.rb file and got a little lost in terms of which controllers my routes were sending the user to. I solved this by creating a new controller specifically to handle nested routes that could see all the reviews for a particular movie, and create reviews for that movie (movies/1/reviews/new). For the most part, I had this controller render pages from views/reviews, but having the control itself separate from my normal reviews controller helped me keep organized.&lt;/p&gt;
-
-&lt;p&gt;In the end, this was a very enjoyable project that gave me a lesson I never thought I’d need. So I say this to anyone reading, and especially to myself: Get your main functionality working before you go digging through 500 stack overflow posts!&lt;/p&gt;</content><author><name></name></author><summary type="html">Always always always...ALWAYS get your main functionality up and running before anything else.</summary></entry></feed>
+&lt;p&gt;I’m still learning a lot about JavaScript, and I’m excited to get a deeper understand of all that JavaScript has to offer!&lt;/p&gt;</content><author><name></name></author><summary type="html">Have one coding language under your belt? On to the next!</summary></entry></feed>

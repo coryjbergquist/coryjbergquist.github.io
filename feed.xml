@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-01-25T12:04:57-07:00</updated><id>/</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">React And Set State</title><link href="/2019/01/24/React-and-set-State.html" rel="alternate" type="text/html" title="React And Set State" /><published>2019-01-24T00:00:00-07:00</published><updated>2019-01-24T00:00:00-07:00</updated><id>/2019/01/24/React-and-set-State</id><content type="html" xml:base="/2019/01/24/React-and-set-State.html">&lt;h3&gt;What else can setState() offer us?&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-02-03T12:13:49-07:00</updated><id>/feed.xml</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Making Routes With React Router Part 2</title><link href="/2019/02/03/making-routes-with-react-router-part-2.html" rel="alternate" type="text/html" title="Making Routes With React Router Part 2" /><published>2019-02-03T00:00:00-07:00</published><updated>2019-02-03T00:00:00-07:00</updated><id>/2019/02/03/making-routes-with-react-router-part-2</id><content type="html" xml:base="/2019/02/03/making-routes-with-react-router-part-2.html">&lt;h3&gt;Creating nested routes and using the history object&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://coryjbergquist.github.io/2018/12/13/making-routes-with-react-router.html&quot;&gt;Click here to read my first article that covers the basics of React Router.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In my first article about React Router, I went over making basic routes and having them render certain React components based on the url. In this article I will go a little deeper and talk about nested routes and using React Router’s history object.&lt;/p&gt;
+
+&lt;p&gt;Nested routes go in the parent component. So if we have our main App component that renders a Cars component, we could navigate to the cars component by visiting www.MyCoolApp.com/cars. If I wanted to have a nested list of links that can navigate to certain types of cars, we would put those links in the Cars component.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// inside of the main App component
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+class Cars extends React.Component {
+
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;ul&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;Link to={`${match.url}/suv`}&amp;gt;SUV&amp;lt;/Link&amp;gt;&amp;lt;/li&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;Link to={`${match.url}/sedan`}&amp;gt;Sedan&amp;lt;/Link&amp;gt;&amp;lt;/li&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;Link to={`${match.url}/convertible`}&amp;gt;Convertible&amp;lt;/Link&amp;gt;&amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+      &amp;lt;/div&amp;gt;
+      )
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now lets say we give our users the ability to add a car to their favorites list, and after they do that, we want our application to automatically redirect to the home page. This is where &lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt; comes in.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;addFavorite = (event) =&amp;gt; {
+  //fire off the addFavorite action to update our Redux store
+  this.props.addFavorite(event);
+  //use the history object to redirect to a new url
+  this.props.history.push(&quot;/&quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here we are using an action to update the Redux store, adding a user’s favorite car. Next we get the &lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt; and call &lt;code class=&quot;highlighter-rouge&quot;&gt;.push(&quot;/&quot;)&lt;/code&gt; to redirect to the home page. Other options might include redirecting to the users profile page, or perhaps back to the main list of cars.&lt;/p&gt;
+
+&lt;p&gt;React Router can be a lot to take in when you applications start to grow. Nested routes are a great way to build deeper structures in an organized way, but make sure you understand the basics before pushing too far!&lt;/p&gt;</content><author><name></name></author><summary type="html">Creating nested routes and using the history object</summary></entry><entry><title type="html">React And Set State</title><link href="/2019/01/24/React-and-set-State.html" rel="alternate" type="text/html" title="React And Set State" /><published>2019-01-24T00:00:00-07:00</published><updated>2019-01-24T00:00:00-07:00</updated><id>/2019/01/24/React-and-set-State</id><content type="html" xml:base="/2019/01/24/React-and-set-State.html">&lt;h3&gt;What else can setState() offer us?&lt;/h3&gt;
 
 &lt;p&gt;If you’ve done your reading, you know that you shouldn’t directly mutate your state when using React.&lt;/p&gt;
 
@@ -358,35 +399,4 @@ donut.describeDonut()
 
 &lt;p&gt;Another issue I had actually ended up being fantastic practice for remember what language I am programming in. Switching between Ruby, JS, HTML, and also remembering the correct jQuery syntax, wasn’t frustrating in the slightest (even when I made mistakes). It turned out to be a really eye opening exercise that gave me a lot of confidence in being able to quickly move from one language to another without any real burden on my thought flow.&lt;/p&gt;
 
-&lt;p&gt;As I have the new functionality of my application working, I am even more excited for my future coding projects!&lt;/p&gt;</content><author><name></name></author><summary type="html">Learning a new skill is tough, but rewarding. With coding I am able to learn new skills everyday which gives me an amazing sense of accomplishment every time I conquer a new task.</summary></entry><entry><title type="html">Stepping From Ruby To Javascript</title><link href="/2018/09/22/stepping-from-ruby-to-javascript.html" rel="alternate" type="text/html" title="Stepping From Ruby To Javascript" /><published>2018-09-22T00:00:00-07:00</published><updated>2018-09-22T00:00:00-07:00</updated><id>/2018/09/22/stepping-from-ruby-to-javascript</id><content type="html" xml:base="/2018/09/22/stepping-from-ruby-to-javascript.html">&lt;h3&gt; Have one coding language under your belt? On to the next! &lt;/h3&gt;
-
-&lt;p&gt;I was happy to see that my knowledge of Ruby helped me understand the basics of JavaScript very quickly. I was seeing similar object types, the ability to assign variables, define functions (similar to Ruby’s methods), and structure code in a familiar way.&lt;/p&gt;
-
-&lt;h3&gt; Data types in JavaScript: &lt;/h3&gt;
-
-&lt;p&gt;JavaScript has seven different data types, which are as follows: numbers, strings, booleans, symbols, objects, null, and undefined. Numbers and strings are similar to what you’d see in Ruby. A number is pretty much what you’d expect (1,2,3 etc.), however, numbers in JavaScript automatically include integers, decimals, floats etc. instead of having to specify what type of number you need. And Strings are pretty straight forward, text that you find inbetween quotes (either “ “, ‘ ‘, or  ). Be sure to use the backticks if you want to use interpolation (ie: &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello, ${name})&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Booleans are pretty straight forward and can only be equal to either “true” or “false”, and will mostly be used for conditional statements, for example:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-let x = 2
-
-function test() {
-    if(x === 2) {
-        x++
-    }
-}
-
-test()
-
-x
-
-=&amp;gt; 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In the above code, we’re assigning the variable “x” to the number “2”, then creating a function that contains an if statement checking if “x” is equal to “2”, if it is, then the block of code that follows the if statement will excecute. &lt;code class=&quot;highlighter-rouge&quot;&gt;x++&lt;/code&gt; is similar to x += 1 which will add one to whatever “x” is.  We then call the “test” function, followed by calling “x” which will show us the new value for “x”.&lt;/p&gt;
-
-&lt;p&gt;Objects in JavaScript are where things get a bit different from Ruby. Objects are a collection of keys and values (like a Ruby hash) that are between curly brackets “{ }”. JavaScript objects are still very powerful because they can hold any type of data.&lt;/p&gt;
-
-&lt;p&gt;Null is also different in JavaScript. Null is used when we intentionally want to leave the value of an object blank. Undefined means a value has not been assigned yet. And symbols can create unique values for identifying object properties.&lt;/p&gt;
-
-&lt;p&gt;I’m still learning a lot about JavaScript, and I’m excited to get a deeper understand of all that JavaScript has to offer!&lt;/p&gt;</content><author><name></name></author><summary type="html">Have one coding language under your belt? On to the next!</summary></entry></feed>
+&lt;p&gt;As I have the new functionality of my application working, I am even more excited for my future coding projects!&lt;/p&gt;</content><author><name></name></author><summary type="html">Learning a new skill is tough, but rewarding. With coding I am able to learn new skills everyday which gives me an amazing sense of accomplishment every time I conquer a new task.</summary></entry></feed>

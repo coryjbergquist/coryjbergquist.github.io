@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=2e2e182490193c27b79f54b59e3d6e370f0a62f1">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Making Routes With React Router Part 2 | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Making Routes With React Router Part 2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Creating nested routes and using the history object" />
+<meta property="og:description" content="Creating nested routes and using the history object" />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-03T00:00:00-07:00" />
+<script type="application/ld+json">
+{"dateModified":"2019-02-03T00:00:00-07:00","datePublished":"2019-02-03T00:00:00-07:00","headline":"Making Routes With React Router Part 2","url":"/2019/02/03/making-routes-with-react-router-part-2.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/02/03/making-routes-with-react-router-part-2.html"},"description":"Creating nested routes and using the history object","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquistjykllfiles/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Making Routes With React Router Part 2</h1>
+
+<p>
+  03 Feb 2019
+  
+  
+</p>
+
+<h3>Creating nested routes and using the history object</h3>
+
+<p><a href="https://coryjbergquist.github.io/2018/12/13/making-routes-with-react-router.html">Click here to read my first article that covers the basics of React Router.</a></p>
+
+<p>In my first article about React Router, I went over making basic routes and having them render certain React components based on the url. In this article I will go a little deeper and talk about nested routes and using React Router’s history object.</p>
+
+<p>Nested routes go in the parent component. So if we have our main App component that renders a Cars component, we could navigate to the cars component by visiting www.MyCoolApp.com/cars. If I wanted to have a nested list of links that can navigate to certain types of cars, we would put those links in the Cars component.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// inside of the main App component
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+class Cars extends React.Component {
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;Link to={`${match.url}/suv`}&gt;SUV&lt;/Link&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;Link to={`${match.url}/sedan`}&gt;Sedan&lt;/Link&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;Link to={`${match.url}/convertible`}&gt;Convertible&lt;/Link&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      )
+  }
+}
+
+</code></pre></div></div>
+
+<p>Now lets say we give our users the ability to add a car to their favorites list, and after they do that, we want our application to automatically redirect to the home page. This is where <code class="highlighter-rouge">history</code> comes in.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addFavorite = (event) =&gt; {
+  //fire off the addFavorite action to update our Redux store
+  this.props.addFavorite(event);
+  //use the history object to redirect to a new url
+  this.props.history.push("/")
+}
+</code></pre></div></div>
+<p>Here we are using an action to update the Redux store, adding a user’s favorite car. Next we get the <code class="highlighter-rouge">history</code> from <code class="highlighter-rouge">this.props</code> and call <code class="highlighter-rouge">.push("/")</code> to redirect to the home page. Other options might include redirecting to the users profile page, or perhaps back to the main list of cars.</p>
+
+<p>React Router can be a lot to take in when you applications start to grow. Nested routes are a great way to build deeper structures in an organized way, but make sure you understand the basics before pushing too far!</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquistjykllfiles">coryjbergquistjykllfiles</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

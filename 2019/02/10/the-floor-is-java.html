@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=2e2e182490193c27b79f54b59e3d6e370f0a62f1">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="What Can We Code Today?" />
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>The Floor Is Java | What Can We Code Today?</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="The Floor Is Java" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Look out the floor is Lava!" />
+<meta property="og:description" content="Look out the floor is Lava!" />
+<meta property="og:site_name" content="What Can We Code Today?" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-10T00:00:00-07:00" />
+<script type="application/ld+json">
+{"dateModified":"2019-02-10T00:00:00-07:00","datePublished":"2019-02-10T00:00:00-07:00","headline":"The Floor Is Java","url":"/2019/02/10/the-floor-is-java.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/02/10/the-floor-is-java.html"},"description":"Look out the floor is Lava!","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- 
+            <a id="forkme_banner" href="http://github.com/coryjbergquistjykllfiles/coryjbergquist.github.io">View on GitHub</a>
+           -->
+          <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/portfolio.html" >Portfolio</a>
+  
+</nav>
+
+
+          <h1 id="project_title">What Can We Code Today?</h1>
+          <h2 id="project_tagline">A coding blog by Cory Bergquist</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>The Floor Is Java</h1>
+
+<p>
+  10 Feb 2019
+  
+  
+</p>
+
+<h3>Look out the floor is Lava!</h3>
+
+<p><img src="https://cdn.gamerant.com/wp-content/uploads/hot-lava-video-game-bedroom.jpg.optimal.jpg" alt="Lava" /></p>
+<blockquote>
+  <p>Image from https://gamerant.com/floor-is-lava-dont-starve/</p>
+</blockquote>
+
+<p>When you were a kid you probably played the game where you pretend the floor is lava and you have to jump from couches onto pillows and blankets to move from room to room. Well, as I dove deeper into my job search as a web developer I found myself jumping from job posting to job posting pretending like I should only look for jobs with my specifically learned languages.</p>
+
+<p>It’s no secret that Java is part of a whole lot of development jobs out there. Not pursuing a position simply because it’s not your main focus can seriously hinder your job search, especially if you are just getting started. As a developer, we are masters of learning the latest and greatest technologies, so what is stopping us from taking some time to learn one of the tried and true languages of the coding world?</p>
+
+<p>After a few weeks of reading through introductions to Java and looking at a lot of code, I quickly realized there are plenty of similarities to the languages I was familiar with (like Javascript and Ruby), and being able to at least understand the main points of Java could be a huge bonus while I continue my job search.</p>
+
+<p>Having said that, I’m going to go over some of the very basics of Java, point out some similarities to Ruby and Javascript, and hopefully get the ball rolling for some of you who might be a little hesitant to start learning Java.</p>
+
+<p>Let’s start with printing some text:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class YourName {
+	public static void main(String[] args) {
+
+		System.out.println("My name is Obi Wan Kenobi");
+
+	}
+}
+</code></pre></div></div>
+
+<p>The important line here is:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  System.out.println("My name is Obi Wan Kenobi");
+</code></pre></div></div>
+
+<p>For those familiar with Ruby, this would be similar to <code class="highlighter-rouge">puts "My name is..."</code>, or rendering text to the DOM in Javascript by calling a function that includes <code class="highlighter-rouge">return "My name is..."</code></p>
+
+<h4 id="data-types">Data types!</h4>
+
+<p>A coding language should have data types right? Java certainly does. A few of the main ones shouldn’t be a surprise to anyone familiar with other coding languages.</p>
+
+<p>The <code class="highlighter-rouge">int</code> data type is for integers (32 bit), the <code class="highlighter-rouge">char</code> data type holds only one character such as “A”, and the <code class="highlighter-rouge">boolean</code> can only be <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. <code class="highlighter-rouge">int</code> and <code class="highlighter-rouge">boolean</code> are similar to what you’d expect from Ruby or Javascript, however the <code class="highlighter-rouge">char</code> data type might be a new one for you. It’s specifically meant to hold one character, so if you have a variable that will always hold one character at time, you could use <code class="highlighter-rouge">char</code>.</p>
+
+<h4 id="but-what-about-strings">But what about Strings?</h4>
+
+<p>Strings aren’t a data type in Java. A string will be an instance of the <code class="highlighter-rouge">String</code> class and can be created like so:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String help = new String ("Help me, Obi Wan Kenobi, you're my only hope");
+</code></pre></div></div>
+<p>or like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String help = "Help me, Obi Wan Kenobi, you're my only hope";
+</code></pre></div></div>
+
+<p>The above code that creates an instance of the <code class="highlighter-rouge">String</code> class should be familiar if you have experience creating Ruby classes or using Javascript Constructors.</p>
+
+<h3 id="variables">Variables</h3>
+
+<p>We’ll end on something a tiny bit more interesting than just going over data types. Variables are a huge part of several coding languages, and Java is part of that club.</p>
+
+<p>As usual, variables are used to store values. In Java however, each variable must be assigned a data type. Let’s go over a couple expamples of assigning variables.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int myAge = 30;
+char myMathTestGrade = 'A';
+boolean obiWanRocks = true;
+</code></pre></div></div>
+
+<p>The first word of each line assigns the data types (int, char or boolean), the second word names the variable (myAge, myMathTestGrade, obiWanRocks), the “<code class="highlighter-rouge">=</code>” sets what is on the left side of the <code class="highlighter-rouge">=</code>, equal to what is on the right side of the <code class="highlighter-rouge">=</code>.</p>
+
+<p>Hopefully this makes it a little easier for some of you to stop avoiding Java and keep on learning!</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">What Can We Code Today? maintained by <a href="http://github.com/coryjbergquistjykllfiles">coryjbergquistjykllfiles</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

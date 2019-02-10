@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-02-03T12:13:49-07:00</updated><id>/feed.xml</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">Making Routes With React Router Part 2</title><link href="/2019/02/03/making-routes-with-react-router-part-2.html" rel="alternate" type="text/html" title="Making Routes With React Router Part 2" /><published>2019-02-03T00:00:00-07:00</published><updated>2019-02-03T00:00:00-07:00</updated><id>/2019/02/03/making-routes-with-react-router-part-2</id><content type="html" xml:base="/2019/02/03/making-routes-with-react-router-part-2.html">&lt;h3&gt;Creating nested routes and using the history object&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-02-10T13:32:37-07:00</updated><id>/feed.xml</id><title type="html">What Can We Code Today?</title><subtitle>A coding blog by Cory Bergquist</subtitle><entry><title type="html">The Floor Is Java</title><link href="/2019/02/10/the-floor-is-java.html" rel="alternate" type="text/html" title="The Floor Is Java" /><published>2019-02-10T00:00:00-07:00</published><updated>2019-02-10T00:00:00-07:00</updated><id>/2019/02/10/the-floor-is-java</id><content type="html" xml:base="/2019/02/10/the-floor-is-java.html">&lt;h3&gt;Look out the floor is Lava!&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn.gamerant.com/wp-content/uploads/hot-lava-video-game-bedroom.jpg.optimal.jpg&quot; alt=&quot;Lava&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Image from https://gamerant.com/floor-is-lava-dont-starve/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When you were a kid you probably played the game where you pretend the floor is lava and you have to jump from couches onto pillows and blankets to move from room to room. Well, as I dove deeper into my job search as a web developer I found myself jumping from job posting to job posting pretending like I should only look for jobs with my specifically learned languages.&lt;/p&gt;
+
+&lt;p&gt;It’s no secret that Java is part of a whole lot of development jobs out there. Not pursuing a position simply because it’s not your main focus can seriously hinder your job search, especially if you are just getting started. As a developer, we are masters of learning the latest and greatest technologies, so what is stopping us from taking some time to learn one of the tried and true languages of the coding world?&lt;/p&gt;
+
+&lt;p&gt;After a few weeks of reading through introductions to Java and looking at a lot of code, I quickly realized there are plenty of similarities to the languages I was familiar with (like Javascript and Ruby), and being able to at least understand the main points of Java could be a huge bonus while I continue my job search.&lt;/p&gt;
+
+&lt;p&gt;Having said that, I’m going to go over some of the very basics of Java, point out some similarities to Ruby and Javascript, and hopefully get the ball rolling for some of you who might be a little hesitant to start learning Java.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with printing some text:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class YourName {
+	public static void main(String[] args) {
+
+		System.out.println(&quot;My name is Obi Wan Kenobi&quot;);
+
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The important line here is:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  System.out.println(&quot;My name is Obi Wan Kenobi&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For those familiar with Ruby, this would be similar to &lt;code class=&quot;highlighter-rouge&quot;&gt;puts &quot;My name is...&quot;&lt;/code&gt;, or rendering text to the DOM in Javascript by calling a function that includes &lt;code class=&quot;highlighter-rouge&quot;&gt;return &quot;My name is...&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;data-types&quot;&gt;Data types!&lt;/h4&gt;
+
+&lt;p&gt;A coding language should have data types right? Java certainly does. A few of the main ones shouldn’t be a surprise to anyone familiar with other coding languages.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; data type is for integers (32 bit), the &lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt; data type holds only one character such as “A”, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; can only be &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; are similar to what you’d expect from Ruby or Javascript, however the &lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt; data type might be a new one for you. It’s specifically meant to hold one character, so if you have a variable that will always hold one character at time, you could use &lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;but-what-about-strings&quot;&gt;But what about Strings?&lt;/h4&gt;
+
+&lt;p&gt;Strings aren’t a data type in Java. A string will be an instance of the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; class and can be created like so:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String help = new String (&quot;Help me, Obi Wan Kenobi, you're my only hope&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;or like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String help = &quot;Help me, Obi Wan Kenobi, you're my only hope&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above code that creates an instance of the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; class should be familiar if you have experience creating Ruby classes or using Javascript Constructors.&lt;/p&gt;
+
+&lt;h3 id=&quot;variables&quot;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;We’ll end on something a tiny bit more interesting than just going over data types. Variables are a huge part of several coding languages, and Java is part of that club.&lt;/p&gt;
+
+&lt;p&gt;As usual, variables are used to store values. In Java however, each variable must be assigned a data type. Let’s go over a couple expamples of assigning variables.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int myAge = 30;
+char myMathTestGrade = 'A';
+boolean obiWanRocks = true;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first word of each line assigns the data types (int, char or boolean), the second word names the variable (myAge, myMathTestGrade, obiWanRocks), the “&lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;” sets what is on the left side of the &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;, equal to what is on the right side of the &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hopefully this makes it a little easier for some of you to stop avoiding Java and keep on learning!&lt;/p&gt;</content><author><name></name></author><summary type="html">Look out the floor is Lava!</summary></entry><entry><title type="html">Making Routes With React Router Part 2</title><link href="/2019/02/03/making-routes-with-react-router-part-2.html" rel="alternate" type="text/html" title="Making Routes With React Router Part 2" /><published>2019-02-03T00:00:00-07:00</published><updated>2019-02-03T00:00:00-07:00</updated><id>/2019/02/03/making-routes-with-react-router-part-2</id><content type="html" xml:base="/2019/02/03/making-routes-with-react-router-part-2.html">&lt;h3&gt;Creating nested routes and using the history object&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://coryjbergquist.github.io/2018/12/13/making-routes-with-react-router.html&quot;&gt;Click here to read my first article that covers the basics of React Router.&lt;/a&gt;&lt;/p&gt;
 
@@ -389,14 +450,4 @@ donut.describeDonut()
 
 &lt;p&gt;Here we have explicitly told “showName” that we want it to be called with the object as “baseballPlayer”. If we didn’t do this, we would get our global variable which puts “this is in global scope” to our console.&lt;/p&gt;
 
-&lt;p&gt;Using “apply()” is very similar to “call()”, the difference being, when you use “apply()” you pass in arguments as an array instead of one at a time.&lt;/p&gt;</content><author><name></name></author><summary type="html">We Use &quot;this&quot; in JavaScript to reference the subject of the code that we're executing.</summary></entry><entry><title type="html">Rails With Javascript</title><link href="/2018/10/05/rails-with-javascript.html" rel="alternate" type="text/html" title="Rails With Javascript" /><published>2018-10-05T00:00:00-07:00</published><updated>2018-10-05T00:00:00-07:00</updated><id>/2018/10/05/rails-with-javascript</id><content type="html" xml:base="/2018/10/05/rails-with-javascript.html">&lt;h3&gt; Learning a new skill is tough, but rewarding. With coding I am able to learn new skills everyday which gives me an amazing sense of accomplishment every time I conquer a new task. &lt;/h3&gt;
-
-&lt;p&gt;Starting on this project allowed me to really grasp the power of combining Rails and JavaScript. I understood the basics of JS, how to create functions and objects, how scope works and where functions need to be to have access to other functions, but combining them with a working Rails application opened up a whole new set of doors.&lt;/p&gt;
-
-&lt;p&gt;I revisited my project for an application where a user can create an account and then create reviews for movies that include title, content, and rating (out of 5). The main focus of this version of the project was to use JavaScript, AJAX and jQuery to render data without having to perform a full page refresh every time. After my initial surprise and excitement from learning that such a thing was even possible, I dove into the specifics for my app. Building your own application using these methods is a great way to get a solid grasp of how they work and what they’re capable of.&lt;/p&gt;
-
-&lt;p&gt;One issue I had was realizing how simple the jQuery/AJAX requests really could be. How data that was being supplied through the AJAX request was confusing to me at first until I realized the pattern was simply using the routes you provided in rails, hitting the controller to get data, and then giving that data to the script in the view page. Once I could wrap my head around the relative simplicity of this action, everything began to make a lot more sense.&lt;/p&gt;
-
-&lt;p&gt;Another issue I had actually ended up being fantastic practice for remember what language I am programming in. Switching between Ruby, JS, HTML, and also remembering the correct jQuery syntax, wasn’t frustrating in the slightest (even when I made mistakes). It turned out to be a really eye opening exercise that gave me a lot of confidence in being able to quickly move from one language to another without any real burden on my thought flow.&lt;/p&gt;
-
-&lt;p&gt;As I have the new functionality of my application working, I am even more excited for my future coding projects!&lt;/p&gt;</content><author><name></name></author><summary type="html">Learning a new skill is tough, but rewarding. With coding I am able to learn new skills everyday which gives me an amazing sense of accomplishment every time I conquer a new task.</summary></entry></feed>
+&lt;p&gt;Using “apply()” is very similar to “call()”, the difference being, when you use “apply()” you pass in arguments as an array instead of one at a time.&lt;/p&gt;</content><author><name></name></author><summary type="html">We Use &quot;this&quot; in JavaScript to reference the subject of the code that we're executing.</summary></entry></feed>
